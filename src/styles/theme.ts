@@ -12,7 +12,7 @@ export default {
     // Seleção medicamento
     GRAY3: "#DBDBDB",
 
-    // InputIcons, Texto descrição Input avaliação
+    // InputIcons, Texto descrição Input avaliação, Texto UNIDADE
     GRAY4: "#BDBDBD",
     
     // Estela não preenchida (somente borda)
@@ -27,14 +27,17 @@ export default {
     // navBackgound, gradient
     RED1: "#F74838",
 
+    // PriceColor
+    RED2: "#FE3A30",
+
     // Buttons
-    RED2: "#F53827",
+    RED3: "#F53827",
 
     // GradientUmbrellaCorp Text
-    RED3: "#912A21",
+    RED4: "#912A21",
 
     // IconConfig, TextConfig
-    RED4: "#611811",
+    RED5: "#611811",
 
     // SocialFacebook
     BLUE: "#4368C7",
