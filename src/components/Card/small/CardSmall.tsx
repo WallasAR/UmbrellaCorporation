@@ -13,7 +13,7 @@ interface Props extends RectButtonProps {
 
 const CardSmall: React.FC<Props> = ({ imageSource, title, price, starRating }) => {
   return(
-    <TouchableOpacity style={{ padding:15}}>
+    <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" style={{ padding:15}}>
       <Container>
       <ImgContainer>
         <Img source={{ uri: imageSource }} />

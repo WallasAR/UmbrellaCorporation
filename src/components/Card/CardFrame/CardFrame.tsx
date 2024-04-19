@@ -26,7 +26,7 @@ const CardFrame: React.FC = () => {
             <Card title="Maleato de dexclorfeniramina 100mL" imageSource="https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png" price="R$6,87" starRating="4.6" amountRating="77"/>
             </ViewCard>
             <ViewCard>
-            <Card title="Dipirona monoidratada 500Mg/mL" imageSource="https://blog.fazfarmanet.com.br/wp-content/uploads/2021/03/Venvanse.jpg" price="R$45,00" starRating="4.6" amountRating="600"/>
+            <Card title="Dipirona monoidratada 500Mg/mL" imageSource="https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png" price="R$45,00" starRating="4.6" amountRating="600"/>
             </ViewCard>
           </ScrollView>
         </FrameCard>

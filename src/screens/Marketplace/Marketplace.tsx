@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
 import { Container, Search, Main } from "./styles"
 
 import { CardFrame } from "../../components/Card/CardFrame/CardFrame";

@@ -1,60 +1,23 @@
 import React from "react";
-import { SafeAreaView } from "react-native";
-import {Container,  ContentHeader, TextLogout, IconStyleLogout, ContentFooter, Title, OptionsContainer, IconPerfil, ConfigName, IconArrow, IconStyle, IconNotification, IconIdioma, IconSecurity, IconSac, LogoutButton, IconLogout} from './style.ts'
-import { GoBackButton } from "../GoBackButton/GoBackButton.tsx";
-import { TouchableNativeFeedback } from "react-native";
+import {OptionsContainer, ConfigName, IconArrow, IconStyle, ContainerIcon } from './style.ts'
+import { RectButtonProps } from "react-native-gesture-handler";
 
-const SettingsButton: React.FC = () => {
+interface Props extends RectButtonProps {
+    icon?: string;
+    name: string;
+    
+  }
+
+const SettingsButton: React.FC<Props> = ({ icon, name }) => {
     return(
-        <SafeAreaView>
-            <Container>
-                <GoBackButton></GoBackButton>
-                <ContentHeader>
-                    <Title>Configurações</Title>
-                </ContentHeader>
-
-                <TouchableNativeFeedback>
-                <OptionsContainer>
-                    <IconStyle>
-                        <IconPerfil name='user'></IconPerfil>
-                    </IconStyle>
-                    <ConfigName>Perfil</ConfigName>
-                    <IconArrow name='keyboard-arrow-right'></IconArrow>
-                </OptionsContainer>
-                </TouchableNativeFeedback>
-
-                <TouchableNativeFeedback>
-                <OptionsContainer>
-                    <IconStyle>
-                        <IconNotification name='bell'></IconNotification>
-                    </IconStyle>
-                    <ConfigName>Notificações</ConfigName>
-                    <IconArrow name='keyboard-arrow-right'></IconArrow>
-                </OptionsContainer>
-                </TouchableNativeFeedback>
-
-                <TouchableNativeFeedback>
-                <OptionsContainer>
-                    <IconStyle>
-                        <IconIdioma name='language'></IconIdioma>
-                    </IconStyle>
-                    <ConfigName>Idioma</ConfigName>
-                    <IconArrow name='keyboard-arrow-right'></IconArrow>
-                </OptionsContainer>
-                </TouchableNativeFeedback>
-
-                <TouchableNativeFeedback>
-                <OptionsContainer>
-                    <IconStyle>
-                        <IconSac name='contact-support'></IconSac>
-                    </IconStyle>
-                    <ConfigName>SAC</ConfigName>
-                    <IconArrow name='keyboard-arrow-right'></IconArrow>
-                </OptionsContainer>
-                </TouchableNativeFeedback>
-            </Container>
-        </SafeAreaView>
+        <OptionsContainer>
+            <ContainerIcon>
+                <IconStyle name={icon}/>
+            </ContainerIcon>
+            <ConfigName>{name}</ConfigName>
+            <IconArrow name='keyboard-arrow-right'></IconArrow>
+        </OptionsContainer>
     );
 }   
 
-export default SettingsButton;
+export { SettingsButton };
