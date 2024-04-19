@@ -24,7 +24,7 @@ export default {
     // Texto detalhamento de informações pedidos
     GRAY7: "#515151", 
 
-    // navBackgound, gradient
+    // navBackgound, gradient, backArrowIcon
     RED1: "#F74838",
 
     // PriceColor
@@ -62,7 +62,9 @@ export default {
   FONTS: {
     TEXT: "DMSans-Medium",
     TITLE: "Rubik-Medium",
-    
+
+    DMSANSREGULAR: "DMSans-Regular",
+    DMSANSBOLD: "DMSans-Bold",
     QUICKSANDLIGHT: "Quicksand-Light",
     QUICKSANDMEDIUM: "Quicksand-Medium",
     QUICKSANDREGULAR: "Quicksand-Regular",
