@@ -1,12 +1,17 @@
 import React from "react";
-import { Container, BackButton } from "./styles"; 
-import { TouchableNativeFeedback } from "react-native";
+import { TouchableOpacity } from "react-native";
+
+import { Container, Circle, Arrow } from "./styles"; 
 
 const GoBackButton: React.FC = () =>{
     return(
-        <Container>
-            <BackButton name='arrow-left'></BackButton>
-        </Container>
+        <TouchableOpacity onPress={() => {console.log("Botão pressionado!"); }}>
+            <Container>
+                <Circle>
+                    <Arrow name='chevron-back-outline'></Arrow>
+                </Circle>
+            </Container>
+        </TouchableOpacity>
     );
 }
 export {GoBackButton};

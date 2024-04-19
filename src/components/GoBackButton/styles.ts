@@ -1,12 +1,22 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import EvilIcons from "react-native-vector-icons/EvilIcons"
+import Ionicons from "react-native-vector-icons/Ionicons"
 
 export const Container = styled.View`
-    padding: ${RFValue(10)}px;
-    margin-top: ${RFValue(30)}px;
+    padding: ${RFValue(60)}px ${RFValue(0)}px ${RFValue(0)}px ${RFValue(25)}px;
 `;
-export const BackButton = styled(EvilIcons)`
-    font-size: ${RFValue(40)}px;
+
+export const Circle = styled.View`
+    width: ${RFValue(35)}px;
+    height: ${RFValue(35)}px;
+    padding-right: ${RFValue(3)}px;
+    border-radius: ${RFValue(50)}px;
+    border: ${RFValue(2)}px solid ${({ theme }) => theme.COLORS.RED1};
+    justify-content: center;
+    align-items: center;
+`;
+
+export const Arrow = styled(Ionicons)`
+    font-size: ${RFValue(25)}px;
     color: ${({theme}) => theme.COLORS.RED1};
 `;
