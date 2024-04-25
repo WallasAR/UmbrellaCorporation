@@ -1,26 +1,23 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export const Container = styled.View`
-  width: 95%;
-  height: ${RFValue(450)}px;
+  width: ${RFValue(140)}px;
+  height: ${RFValue(240)}px;
   border-radius: ${RFValue(10)}px;
-  margin-top: ${RFValue(50)}px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
-  elevation: 2;
-  position: relative;
-  justify-content: center;
-  align-self: center;
+  elevation: 3;
 `;
 
 export const Content = styled.View`
-  flex: 0.7;
+  flex: 1;
   padding-left: ${RFValue(10)}px;
 `;
 
 export const ImgContainer = styled.View`
-  flex: 1.6;
-  width: 100%;
+  flex: 1;
+  overflow: hidden;
   border-top-left-radius: ${RFValue(10)}px;
   border-top-right-radius: ${RFValue(10)}px;
 `;
@@ -28,12 +25,11 @@ export const ImgContainer = styled.View`
 export const Img = styled.Image`
   width: 100%;
   height: 100%;
-  border-top-left-radius: ${RFValue(10)}px;
-  border-top-right-radius: ${RFValue(10)}px;
 `;
 
 export const Name = styled.Text`
-  font-size: ${RFValue(20)}px;
+  font-size: ${RFValue(14)}px;
+  margin-bottom: ${RFValue(5)}px;
   margin-top: ${RFValue(15)}px;
   font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
   color: ${({ theme }) => theme.COLORS.BLACK};
@@ -41,40 +37,45 @@ export const Name = styled.Text`
 `;
 
 export const PriceContainer = styled.View`
-  flex-direction: column;
-  margin-left: ${RFValue(10)}px;
-  position: absolute;
-  bottom: ${RFValue(10)}px;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Price = styled.Text`
-  font-size: ${RFValue(28)}px;
+  font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.FONTS.DMSANSBOLD};
   color: ${({ theme }) => theme.COLORS.RED2};
 `;
 
 export const PriceType = styled.Text`
   font-size: ${RFValue(10)}px;
+  margin-left: ${RFValue(5)}px;
   font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
   color: ${({ theme }) => theme.COLORS.GRAY4};
   letter-spacing: 1px;
 `;
 
-export const StockContainer = styled.View`
+export const Rating = styled.View`
   flex-direction: row;
   align-items: center;
-  position: absolute;
-  bottom: ${RFValue(0)}px;
-  right: ${RFValue(0)}px;
-  border-bottom-right-radius: ${RFValue(10)}px;
-  border-top-left-radius: ${RFValue(10)}px;
-  color: ${({ theme }) => theme.COLORS.GRAY7};
-  background-color: ${({ theme }) => theme.COLORS.GRAY2};
-  padding: ${RFValue(10)}px;
+  margin-top: ${RFValue(5)}px;
 `;
 
-export const StockAmount = styled.Text`
-  font-size: ${RFValue(14)}px;
+export const Icon = styled(AntDesign)`
+  font-size: ${RFValue(10)}px;
+  color: ${({ theme }) => theme.COLORS.YELLOW}
+`;
+
+export const StarRating = styled.Text`
+  font-size: ${RFValue(10)}px;
   margin-left: ${RFValue(5)}px;
   font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+  color: ${({ theme }) => theme.COLORS.BLACK};
+`;
+
+export const AmountRating = styled.Text`
+  font-size: ${RFValue(10)}px;
+  margin-left: ${RFValue(7)}px;
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+  color: ${({ theme }) => theme.COLORS.BLACK};
 `;

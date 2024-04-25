@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 
 import { Container, FrameCard, ViewCard } from "./styles";
-import { Card } from "../full/Card";
+import { Card } from "../Regular/Card";
 
 const CardFrame: React.FC = () => {
   return(

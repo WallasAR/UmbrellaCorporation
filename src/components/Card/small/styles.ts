@@ -54,8 +54,9 @@ export const Price = styled.Text`
 export const PriceType = styled.Text`
   font-size: ${RFValue(10)}px;
   margin-left: ${RFValue(5)}px;
-  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
   color: ${({ theme }) => theme.COLORS.GRAY4};
+  letter-spacing: 1px;
 `;
 
 export const Rating = styled.View`

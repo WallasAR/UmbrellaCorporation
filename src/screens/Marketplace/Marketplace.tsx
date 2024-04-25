@@ -5,6 +5,7 @@ import { Container, Search, Main } from "./styles"
 
 import { CardFrame } from "../../components/Card/CardFrame/CardFrame";
 import { CardFrameSmall } from "../../components/Card/CardFrameSmall/CardFrameSmall";
+import { CardFull } from "../../components/Card/Full/CardFull";
 
 
 const Marketplace: React.FC = () => {

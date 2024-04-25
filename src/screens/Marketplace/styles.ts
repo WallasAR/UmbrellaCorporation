@@ -7,5 +7,5 @@ export const Search = styled.View`
 `;
 
 export const Main = styled.View`
-
+  
 `;
