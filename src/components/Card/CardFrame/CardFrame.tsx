@@ -1,37 +1,146 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { FlatList } from "react-native";
 
-import { Container, FrameCard, ViewCard } from "./styles";
+import { Container, FrameCard, IndicatorContainer } from "./styles";
 import { Card } from "../Regular/Card";
+import { CardSmall } from "../Small/CardSmall";
+import { Button } from "../../Buttons/Button";
+
+const InfoCards = [
+  {id: "1",
+  title:"Dipirona monoidratada 500Mg/mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/dip-monoid-500mg,mL.png",
+  price:"R$15,00",
+  starRating:"4.6",
+  amountRating:"600"
+  },
+  {id: "2",
+  title:"Cloridrato de ambroxol 100mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/clorid-ambroxol-3mg,mL.png",
+  price:"R$10,00",
+  starRating:"4.6",
+  amountRating:"121"
+  },
+  {id: "3",
+  title:"Dexametasona elixir 120mL",
+  imageSource:"https://www.farmace.com.br/images/2023/05/08/dexam-elixir-01mgml.png",
+  price:"R$18,50",
+  starRating:"4.6",
+  amountRating:"819"
+  },
+  {id: "4",
+  title:"Paracetamol 15mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/paracetamol-200mg,mL.png",
+  price:"R$21,00",
+  starRating:"4.1",
+  amountRating:"32"
+  },
+  {id: "5",
+  title:"Maleato de dexclorfeniramina 100mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png",
+  price:"R$6,87",
+  starRating:"3.9",
+  amountRating:"77"
+  },
+  {id: "6",
+  title:"Dipirona monoidratada 500Mg/mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/dip-monoid-500mg,mL.png",
+  price:"R$15,00",
+  starRating:"4.6",
+  amountRating:"600"
+  },
+  {id: "7",
+  title:"Cloridrato de ambroxol 100mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/clorid-ambroxol-3mg,mL.png",
+  price:"R$10,00",
+  starRating:"4.6",
+  amountRating:"121"
+  },
+  {id: "8",
+  title:"Dexametasona elixir 120mL",
+  imageSource:"https://www.farmace.com.br/images/2023/05/08/dexam-elixir-01mgml.png",
+  price:"R$18,50",
+  starRating:"4.6",
+  amountRating:"819"
+  },
+  {id: "9",
+  title:"Paracetamol 15mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/paracetamol-200mg,mL.png",
+  price:"R$21,00",
+  starRating:"4.1",
+  amountRating:"32"
+  },
+  {id: "10",
+  title:"Maleato de dexclorfeniramina 100mL",
+  imageSource:"https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png",
+  price:"R$6,87",
+  starRating:"3.9",
+  amountRating:"77"
+  },
+]
 
 const CardFrame: React.FC = () => {
   return(
     <Container>
-      <FrameCard>
-          {/* Implementar FlatList, scroll infinito com base nas informações dadas pelo db, posteriormente!! */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <ViewCard>
-            <Card title="Dipirona monoidratada 500Mg/mL" imageSource="https://www.farmace.com.br/images/2019/05/18/dip-monoid-500mg,mL.png" price="R$15,00" starRating="4.6" amountRating="600"/>
-            </ViewCard>
-            <ViewCard>
-            <Card title="Cloridrato de ambroxol 100mL" imageSource="https://www.farmace.com.br/images/2019/05/18/clorid-ambroxol-3mg,mL.png" price="R$10,00" starRating="4.6" amountRating="121"/>
-            </ViewCard>
-            <ViewCard>
-            <Card title="Dexametasona elixir 120mL" imageSource="https://www.farmace.com.br/images/2023/05/08/dexam-elixir-01mgml.png" price="R$18,50" starRating="4.6" amountRating="819"/>
-            </ViewCard>
-            <ViewCard>
-            <Card title="Paracetamol 15mL" imageSource="https://www.farmace.com.br/images/2019/05/18/paracetamol-200mg,mL.png" price="R$21,00"  starRating="4.6" amountRating="32"/>
-            </ViewCard>
-            <ViewCard>
-            <Card title="Maleato de dexclorfeniramina 100mL" imageSource="https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png" price="R$6,87" starRating="4.6" amountRating="77"/>
-            </ViewCard>
-            <ViewCard>
-            <Card title="Dipirona monoidratada 500Mg/mL" imageSource="https://www.farmace.com.br/images/2019/05/18/maleato-dexclor-0,4mg,mL.png" price="R$45,00" starRating="4.6" amountRating="600"/>
-            </ViewCard>
-          </ScrollView>
-        </FrameCard>
+      {/* Implementar FlatList, scroll infinito com base nas informações dadas pelo db, posteriormente!! */}
+      <FlatList
+        data={InfoCards}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <FrameCard>
+              <Card 
+                title={item.title}
+                imageSource={item.imageSource}
+                price={item.price}
+                starRating={item.starRating}
+                amountRating={item.amountRating}
+                />
+          </FrameCard>
+        )}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      />
+            <IndicatorContainer>
+              <Button
+                onPress={() => {} }
+                variant="indicator"
+                iconName="chevron-forward-outline"
+                disabled={true}
+              />
+            </IndicatorContainer>
     </Container>
   )
 }
 
-export { CardFrame };
+interface CardFrameSmallProps {
+  horizontal: boolean; 
+  onPress: () => void;
+};
+
+const CardFrameSmall: React.FC<CardFrameSmallProps> = ({ horizontal, onPress = () => {} }) => {
+  return(
+    <Container>
+      {/* Implementar FlatList, scroll infinito com base nas informações dadas pelo db, posteriormente!! */}
+      <FlatList
+        data={InfoCards}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <FrameCard>
+              <CardSmall 
+                onPress={onPress}
+                iconName={true}
+                title={item.title}
+                price={item.price}
+                starRating={item.starRating}
+                imageSource={item.imageSource}
+                />
+          </FrameCard>
+        )}
+        horizontal={horizontal}
+        showsHorizontalScrollIndicator={false}
+        />
+    </Container>
+  )
+}
+
+export { CardFrame, CardFrameSmall };

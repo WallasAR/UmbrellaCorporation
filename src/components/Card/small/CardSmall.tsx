@@ -1,36 +1,39 @@
 import React from "react";
+import { TouchableOpacity, View } from "react-native";
+
 import { Container, Content, ImgContainer, Img, Name, PriceContainer, Price, PriceType, Icon, Rating, StarRating } from "./styles";
-import { TouchableOpacity } from "react-native";
-import { RectButtonProps } from 'react-native-gesture-handler';
 
-interface Props extends RectButtonProps {
+interface CardProps {
   title: string;
-  imageSource: string;
   price: string;
-  starRating: string;
+  iconName: boolean;
+  onPress: () => void;
+  imageSource: string;
+  starRating?: string;
+};
 
-}
-
-const CardSmall: React.FC<Props> = ({ imageSource, title, price, starRating }) => {
+const CardSmall: React.FC<CardProps> = ({ imageSource, title, price, iconName, starRating, onPress = () => { }, }) => {
   return(
-    <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" style={{ padding:15}}>
-      <Container>
-      <ImgContainer>
-        <Img source={{ uri: imageSource }} />
-      </ImgContainer>
-        <Content>
-        <Name>{title}</Name>
-          <PriceContainer>
-            <Price>{price}</Price>
-            <PriceType>UNIDADE</PriceType>
-          </PriceContainer>
-          <Rating>
-            <Icon name="star"/>
-            <StarRating>{starRating}</StarRating>
-          </Rating>
-        </Content>
-      </Container>
-    </TouchableOpacity>
+    <View style={{ padding: 15 }}>
+      <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" onPress={onPress}>
+        <Container>
+        <ImgContainer>
+          <Img source={{ uri: imageSource }} />
+        </ImgContainer>
+          <Content>
+          <Name>{title}</Name>
+            <PriceContainer>
+              <Price>{price}</Price>
+              <PriceType>UNIDADE</PriceType>
+            </PriceContainer>
+            <Rating>
+              <Icon name={iconName ? "star" : undefined }/>
+              <StarRating>{starRating}</StarRating>
+            </Rating>
+          </Content>
+        </Container>
+      </TouchableOpacity>
+    </View>
   );
 };
 

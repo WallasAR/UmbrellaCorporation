@@ -3,20 +3,23 @@ import { RFValue } from "react-native-responsive-fontsize";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 export const Container = styled.View`
+  border: 1px dashed ${({ theme }) => theme.COLORS.GRAY3};
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
   width: ${RFValue(300)}px;
   height: ${RFValue(80)}px;
   border-radius: ${RFValue(10)}px;
-  flex-direction: row;
-  justify-content: center;
-  overflow: hidden;
-  elevation: 3;
-  background-color: ${({ theme }) => theme.COLORS.WHITE};
+
 `;
 
 export const ImgContainer = styled.View`
-  width: ${RFValue(80)}px;
   height: 100%;
+  width: ${RFValue(80)}px;
   justify-content: center;
+  align-items: center;
+  align-self: center;
+  padding: ${RFValue(5)}px;
 `;
 
 export const Img = styled.Image`
@@ -36,8 +39,8 @@ export const Content = styled.View`
 export const Name = styled.Text`
   font-size: ${RFValue(14)}px;
   margin-bottom: ${RFValue(5)}px;
-  font-family: ${({ theme }) => theme.FONTS.TEXT};
   color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.TEXT};
 `;
 
 export const PriceContainer = styled.View`
@@ -47,22 +50,22 @@ export const PriceContainer = styled.View`
 
 export const Price = styled.Text`
   font-size: ${RFValue(18)}px;
-  font-family: ${({ theme }) => theme.FONTS.DMSANSBOLD};
   color: ${({ theme }) => theme.COLORS.RED2};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSBOLD};
 `;
 
 export const PriceType = styled.Text`
+  letter-spacing: ${RFValue(1)}px;
   font-size: ${RFValue(10)}px;
   margin-left: ${RFValue(5)}px;
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
   color: ${({ theme }) => theme.COLORS.GRAY4};
-  letter-spacing: 1px;
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
 `;
 
 export const Rating = styled.View`
+  position: absolute;
   flex-direction: row;
   align-items: center;
-  position: absolute;
   bottom: ${RFValue(10)}px;
   right: ${RFValue(10)}px;
   margin-top: ${RFValue(5)}px;
@@ -76,6 +79,6 @@ export const Icon = styled(AntDesign)`
 
 export const StarRating = styled.Text`
   font-size: ${RFValue(12)}px;
-  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
   color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
 `;

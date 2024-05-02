@@ -1,21 +1,20 @@
 import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 export const Container = styled.View`
   flex-direction: row;
-  margin-top: 200px;
-  padding-left: 18px;
-  padding: 10px;
+  justify-content: space-around;
+  
 `;
 
 export const FrameCard = styled.View`
-  flex: 1;
-  padding: 10px 0;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  /* elevation: 3;
-  background-color: #fff; */
 `;
 
-export const ViewCard = styled.View`
-  margin: auto 15px;
+export const IndicatorContainer = styled.View`
+  flex-direction: row;
+  justify-content: flex-end; /* Alinha os elementos filhos à direita */
+  position: absolute; 
+  top: 35%;
+  left: 85%;
 `;
