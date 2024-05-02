@@ -2,17 +2,17 @@ import React from "react";
 import { ActivityIndicator, TouchableOpacityProps } from "react-native";
 
 import { useTheme } from "styled-components";
-import Icon from "react-native-vector-icons/Ionicons";
+
 import { variants } from "./Variants";
-import { Container, Content, Title } from "./styles";
+import { Container, Content, Title, Icon } from "./styles";
 
 interface ButtonProps {
-  title: string; 
+  title?: string; 
   onPress: () => void;
-  iconName?: keyof typeof Icon.glyphmap;
+  iconName?: string;
   isLoading?: boolean;
   disabled?: boolean;
-  variant?: "primary" | "purchase";
+  variant?: "primary" | "purchase" | "indicator" | "toCard" | "googleSocial" | "facebookSocial" | "transparent";
   style?: TouchableOpacityProps["style"];
   width?: number
 }
@@ -29,8 +29,10 @@ const Button: React.FC<ButtonProps> = ({
     const { COLORS } = useTheme();
     const buttonVariant = variants[variant];
     const buttonStyle = disabled ? buttonVariant.disabled : buttonVariant.enabled;
+    
     return(
       <Container
+        activeOpacity={0.8}
         onPress={onPress}
         disabled={isLoading || disabled}
         style={[buttonStyle.button, style]}
@@ -41,10 +43,9 @@ const Button: React.FC<ButtonProps> = ({
           <Content>
             {iconName && (
               <Icon 
-                  size={25}
+                  size={buttonStyle.icon.size}
                   name={iconName}
                   color={buttonStyle.icon.color}
-                  style={{ marginRight: 15 }}
               />
             )}
           </Content>
