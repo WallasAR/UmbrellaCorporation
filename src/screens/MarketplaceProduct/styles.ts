@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
-  margin-bottom: 100px;
+
 `;
 
 export const Header = styled.View`
@@ -16,35 +16,53 @@ export const Section = styled.View`
 `;
 
 export const DescriptionTitle = styled.Text`
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
-  color: ${({ theme }) => theme.COLORS.BLACK};
   font-size: ${RFValue(18)}px;
   margin-bottom: ${RFValue(10)}px;
+  color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
 `;
 
 export const DescriptionText = styled.Text`
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDREGULAR};
-  color: ${({ theme }) => theme.COLORS.BLACK};
   font-size: ${RFValue(16)}px;
   line-height: ${RFValue(24)}px;
+  color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDREGULAR};
 `;
 
 export const Description = styled.Text`
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
-  color: ${({ theme }) => theme.COLORS.BLACK};
+  text-align: center;
   font-size: ${RFValue(16)}px;
   letter-spacing: ${RFValue(1.1)}px;
+  color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
+`;
+
+export const SubTitle = styled.Text`
+  padding-horizontal: ${RFValue(10)}px;
+  margin-top: ${RFValue(40)}px;
+  margin-bottom: ${RFValue(15)}px;
+  font-size: ${RFValue(18)}px;
+  color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+`;
+
+export const Label = styled.Text`
   text-align: center;
+  margin: ${RFValue(10)}px 0px;
+  font-size: ${RFValue(16)}px;
+  color: ${({ theme }) => theme.COLORS.GRAY4};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
 `;
 
 export const BtnContainer = styled.View`
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 export const UserRatingContainer = styled.View`
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
 `;
 
 export const MakeRatingContainer = styled.View`
