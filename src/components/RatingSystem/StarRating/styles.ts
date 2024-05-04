@@ -15,6 +15,7 @@ export const Container = styled.View`
 
 export const Star = styled(AntDesign)`
   font-size: ${RFValue(18)}px;
+  padding: ${RFValue(10)}px;
 `;
 
 export const ContainerViewOnly = styled.View`

@@ -2,6 +2,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
+  flex: 1;
   width: 90%;
   padding: ${RFValue(5)}px;
   height: ${RFValue(110)}px;
@@ -39,7 +40,7 @@ export const Username = styled.Text`
 
 export const Description = styled.Text`
   width: 90%;
-  height: ${RFValue(60)}px;
+  height: ${RFValue(50)}px;
   font-size: ${RFValue(12)}px;
   color: ${({ theme }) => theme.COLORS.BLACK};
   font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};

@@ -5,7 +5,7 @@ import { Container, Circle, Arrow } from "./styles";
 
 const GoBackButton: React.FC = () =>{
     return(
-        <TouchableOpacity onPress={() => {console.log("Botão pressionado!"); }}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => {console.log("Botão pressionado!"); }}>
             <Container>
                 <Circle>
                     <Arrow name='chevron-back-outline'></Arrow>

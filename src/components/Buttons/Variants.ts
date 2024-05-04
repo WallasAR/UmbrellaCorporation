@@ -90,6 +90,7 @@ const buttonPurchase: ButtonVariant = {
     button: {
       backgroundColor: theme.COLORS.GREEN,
       width: 135,
+      borderRadius: 50
     },
     title: {
       color: theme.COLORS.WHITE,
@@ -118,6 +119,7 @@ const buttonIndicatorIcon: ButtonVariant = {
       width: 40,
       height: 40,
       elevation: 5,
+      borderRadius: 99
     },
     title: {
       color: theme.COLORS.WHITE,

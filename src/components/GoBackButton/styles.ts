@@ -3,20 +3,21 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 export const Container = styled.View`
-    padding: ${RFValue(60)}px ${RFValue(0)}px ${RFValue(0)}px ${RFValue(25)}px;
+    width: ${RFValue(35)}px;
+    margin: ${RFValue(20)}px;
+    height: ${RFValue(35)}px;
 `;
 
 export const Circle = styled.View`
-    width: ${RFValue(35)}px;
-    height: ${RFValue(35)}px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
     padding-right: ${RFValue(3)}px;
     border-radius: ${RFValue(50)}px;
-    border: ${RFValue(2)}px solid ${({ theme }) => theme.COLORS.RED1};
-    justify-content: center;
-    align-items: center;
+    border: ${RFValue(2.3)}px solid ${({ theme }) => theme.COLORS.RED1};
 `;
 
 export const Arrow = styled(Ionicons)`
-    font-size: ${RFValue(25)}px;
+    font-size: ${RFValue(20)}px;
     color: ${({theme}) => theme.COLORS.RED1};
 `;

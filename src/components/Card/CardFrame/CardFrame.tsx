@@ -79,20 +79,24 @@ const InfoCards = [
   },
 ]
 
-const CardFrame: React.FC = () => {
+interface CardFrameProps {
+  onPress: () => void;
+};
+
+const CardFrame: React.FC<CardFrameProps> = ({ onPress = () => {} }) => {
   return(
     <Container>
-      {/* Implementar FlatList, scroll infinito com base nas informações dadas pelo db, posteriormente!! */}
       <FlatList
         data={InfoCards}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <FrameCard>
               <Card 
-                title={item.title}
-                imageSource={item.imageSource}
+                onPress={onPress}
                 price={item.price}
+                title={item.title}
                 starRating={item.starRating}
+                imageSource={item.imageSource}
                 amountRating={item.amountRating}
                 />
           </FrameCard>
@@ -120,15 +124,14 @@ interface CardFrameSmallProps {
 const CardFrameSmall: React.FC<CardFrameSmallProps> = ({ horizontal, onPress = () => {} }) => {
   return(
     <Container>
-      {/* Implementar FlatList, scroll infinito com base nas informações dadas pelo db, posteriormente!! */}
       <FlatList
         data={InfoCards}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <FrameCard>
               <CardSmall 
-                onPress={onPress}
                 iconName={true}
+                onPress={onPress}
                 title={item.title}
                 price={item.price}
                 starRating={item.starRating}

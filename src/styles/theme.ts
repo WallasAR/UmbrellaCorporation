@@ -1,10 +1,13 @@
 export default {
   COLORS: {
+
+    BACKGROUNDLIGHT: "#fafafa",
+
     // Icones de navegação, screenBackground, googleButton, ...
     WHITE: "#FFF",
 
     // Inputs
-    GRAY: "#F2F2F2",
+    GRAY: "#E8E8E8",
 
     // Borda quadro estela
     GRAY2: "#EDEDED",
@@ -17,12 +20,18 @@ export default {
     
     // Estela não preenchida (somente borda)
     GRAY5: "#C4C5C4",
-
+    
     // Texto tempo da avaliação 
     GRAY6: "#838589",
 
     // Texto detalhamento de informações pedidos
     GRAY7: "#515151", 
+
+    // Login icon input
+    GRAY8: "#828282",
+
+    // Login icon input
+    GRAY9: "#D7D7D7",
 
     // navBackgound, gradient, backArrowIcon
     RED1: "#F74838",
@@ -47,6 +56,9 @@ export default {
 
     // Descrição Carrinho
     YELLOW2: "#FEFFDC",
+
+    // Line Descrição carrinho
+    YELLOW3: "#E5E7B8",
 
     // Button
     GREEN: "#48BD00",

@@ -5,17 +5,18 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 
 interface Props extends RectButtonProps {
   title: string;
-  imageSource: string;
   price: string;
   starRating: string;
+  onPress: () => void;
+  imageSource: string;
   amountRating: string;
 
 }
 
-const Card: React.FC<Props> = ({ imageSource, title, price, starRating, amountRating }) => {
+const Card: React.FC<Props> = ({ imageSource, title, price, starRating, amountRating, onPress = () => {} }) => {
   return(
     <View style={{ padding: 15 }}>
-      <TouchableOpacity activeOpacity={0.8} accessibilityRole="button">
+      <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" onPress={onPress}>
         <Container>
         <ImgContainer>
           <Img source={{ uri: imageSource }} />
