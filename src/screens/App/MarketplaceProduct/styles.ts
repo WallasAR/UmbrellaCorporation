@@ -2,11 +2,12 @@ import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
-
+  width: 100%;
+  height: 100%;
 `;
 
 export const Header = styled.View`
-
+  margin-bottom: ${RFValue(10)}px;
 `;
 
 export const Section = styled.View`

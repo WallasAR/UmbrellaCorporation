@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { FlatList } from "react-native";
+import { useTheme } from "styled-components";
 
-import { TextArea } from "../../components/Input/Input"
-import { Button } from "../../components/Buttons/Button";
-import { StarRating } from "../../components/RatingSystem/StarRating/StarRating";
-import { CardFull } from "../../components/Card/Full/CardFull";
-import { CardFrame, CardFrameSmall } from "../../components/Card/CardFrame/CardFrame";
-import { UserReviewLayout } from "../../components/RatingSystem/UserReviewLayout/UserReviewLayout";
+import { TextArea } from "../../../components/Input/Input"
+import { Button } from "../../../components/Buttons/Button";
+import { StarRating } from "../../../components/RatingSystem/StarRating/StarRating";
+import { CardFull } from "../../../components/Card/Full/CardFull";
+import { CardFrame, CardFrameSmall } from "../../../components/Card/CardFrame/CardFrame";
+import { UserReviewLayout } from "../../../components/RatingSystem/UserReviewLayout/UserReviewLayout";
 
 import { Container, Header, Section, DescriptionTitle, DescriptionText, SubTitle, Label, BtnContainer, UserRatingContainer, MakeRatingContainer } from "./styles";
 
 
 const MarketplaceProduct: React.FC = () => {
+  const { COLORS } = useTheme()
   // Extende o conteiner de avaliações
   const [expanded, setExpanded] = useState(false)
   // Atualiza os dados da lista para evitar erros
@@ -68,12 +70,12 @@ const MarketplaceProduct: React.FC = () => {
   ];
 
   return (
-    <FlatList
-      data={[{ key: 'header' }, { key: 'content' }]} // Adiciona chaves para os itens de cabeçalho e conteúdo
+    <FlatList style={{ backgroundColor: COLORS.WHITE}}
+      data={[{ key: "header" }, { key: "content" }]} // Adiciona chaves para os itens de cabeçalho e conteúdo
       renderItem={({ item }) => ( // Define a função de renderização para cada item
         // fragmento agrupar múltiplos elementos filhos
         <>
-          {item.key === 'header' && ( // Renderiza o cabeçalho
+          {item.key === "header" && ( // Renderiza o cabeçalho
             <Header>
               <CardFull 
                 title="Dipirona monoidratada 500Mg/mL" 
@@ -83,7 +85,7 @@ const MarketplaceProduct: React.FC = () => {
               />
             </Header>
           )}
-          {item.key === 'content' && ( // Renderiza o conteúdo
+          {item.key === "content" && ( // Renderiza o conteúdo
             <Container>
               <BtnContainer>
                 <Button

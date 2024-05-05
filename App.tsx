@@ -1,22 +1,23 @@
 import React from "react";
 import { View, StatusBar } from "react-native";
-
 import { ThemeProvider } from "styled-components/native";
-import COLORS from "./src/styles/theme";
+import { NavigationContainer } from "@react-navigation/native";
 
-import { Marketplace } from "./src/screens/Marketplace/Marketplace";
-import { Settings } from "./src/screens/Settings/Settings";
+import { Routes } from "./src/routes"
+
+import theme from "./src/styles/theme";
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={COLORS}>
-      <View>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
         <StatusBar translucent backgroundColor="transparent" barStyle="dark-content"/>
-        <Marketplace/>
-        {/* <Settings/> */}
-      </View>
+        <View style={{ flex: 1 }}>
+          <Routes/>
+        </View>
+      </NavigationContainer>
       </ThemeProvider>
-  )
-}
+  );
+};
 
-export default App; 
+export default App;

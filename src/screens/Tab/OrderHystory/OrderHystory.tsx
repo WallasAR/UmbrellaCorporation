@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { SafeAreaView } from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from "react-native-reanimated";
 
-import { CardSmall } from "../../components/Card/Small/CardSmall";
+import { CardSmall } from "../../../components/Card/Small/CardSmall";
 
 import { Container, Header, Title, SetDescription, ViewText, TotalInfoContainer, ViewDescription, FrameCard, Main } from "./styles";
 
