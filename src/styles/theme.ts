@@ -7,7 +7,7 @@ export default {
     WHITE: "#FFF",
 
     // Inputs
-    GRAY: "#E8E8E8",
+    GRAY: "#F2F2F2",
 
     // Borda quadro estela
     GRAY2: "#EDEDED",
@@ -67,8 +67,18 @@ export default {
     GREEN2: "#56BE15",
 
     // Texts
-    BLACK: "#000"
-    
+    BLACK: "#000",
+
+
+    // SocialButton
+    // Instagram Pallete
+    IYELLOW: "#FCAF45",
+
+    IPINK: "#E1306C",
+
+    IPURPLE: "#833AB4",
+
+    IBERRY: "#5B51B8"
   },
 
   FONTS: {

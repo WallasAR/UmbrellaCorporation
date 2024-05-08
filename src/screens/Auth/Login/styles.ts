@@ -2,14 +2,17 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-    margin-top: ${RFValue(20)}px;
+    width: 100%;
+    height: 100%;
     padding: ${RFValue(20)}px;
+    background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Header = styled.View`
     align-items: center;
     justify-content: center;
     padding: ${RFValue(20)}px;
+    margin-top: ${RFValue(20)}px;
     
 `;
 
@@ -25,14 +28,15 @@ export const Footer = styled.View`
     justify-content: center;
     margin-top: ${RFValue(50)}px;
 `;
+
 export const Title = styled.Text`
     text-align: center;
-    margin-top: ${RFValue(40)}px;
+    /* margin-top: ${RFValue(40)}px; */
     font-size: ${RFValue(24)}px;
     color: ${({ theme }) => theme.COLORS.BLACK};
     font-family: ${({ theme }) => theme.FONTS.TITLE};
-
 `;
+
 export const Description = styled.Text`
     font-size: ${RFValue(14)}px;
     margin-top: ${RFValue(60)}px;
@@ -40,6 +44,7 @@ export const Description = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
     
 `;
+
 export const ViewButton = styled.View`
     flex-direction: row;
     margin-bottom: ${RFValue(15)}px;

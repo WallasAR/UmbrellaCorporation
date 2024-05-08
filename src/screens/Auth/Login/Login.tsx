@@ -3,8 +3,12 @@ import { useTheme } from "styled-components";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView, KeyboardAvoidingView } from "react-native";
 
+import { LinearGradient } from "react-native-linear-gradient";
+import MaskedView from "@react-native-masked-view/masked-view";
+
 import { Input } from "../../../components/Input/Input"
 import { Button } from "../../../components/Buttons/Button";
+import { ButtonSocial } from "../../../components/ButtonSocial/ButtonSocial";
 
 import { 
   Container, 
@@ -38,24 +42,42 @@ const Login: React.FC = () => {
       <SafeAreaView>
         <Container>
           <Header>
-            {/* Task pendente: criar linear gradient em "Umbrella Corp." */}
-            <Title>É bom vê-lo novamente {"\n"}Umbrella Corp.</Title>
+            {/* Task pendente: criar linear gradient em "Umbrella Corp." (Feito!)*/}
+            <Title>É bom vê-lo novamente a</Title>
+            <MaskedView maskElement={
+              <Title style={{ backgroundColor: "transparent" }}>Umbrella Corp.</Title>
+            }>
+            <LinearGradient
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              colors={[COLORS.RED1, COLORS.RED4]}
+            >
+              <Title style={{ opacity: 0 }}>Umbrella Corp.</Title>
+            </LinearGradient>
+            </MaskedView>
 
             <Description>Entrar com</Description>
 
             <ViewButton>
-              <Button
+              <ButtonSocial 
+                widthSvg="25%"
+                heightSvg="50%"
                 title="Google" 
                 iconName="logo-google"
-                variant="googleSocial"
-                onPress={() => {console.log("oAuth2 Google Cloud!")} }
+                onPress={() => {console.log("oAuth2 with google Cloud")}}
+                uriSvg="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
               />
-              <Button
-                title="Facebook" 
-                iconName="logo-facebook"
-                variant="facebookSocial"
-                onPress={() => {console.log(" Trocar para instagram e instalar api https://www.npmjs.com/package/react-native-instagram-login")} }
-              />
+
+              <ButtonSocial 
+                title="Instagram" 
+                linearGradientEnabled
+                Color1={COLORS.IYELLOW}
+                Color2={COLORS.IPINK}
+                Color3={COLORS.IPURPLE}
+                Color4={COLORS.IBERRY}
+                iconName="logo-instagram" 
+                onPress={() => {console.log("check https://www.npmjs.com/package/react-native-instagram-login")}}
+                />
             </ViewButton>
             
           </Header>

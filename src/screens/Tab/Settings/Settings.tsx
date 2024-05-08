@@ -1,18 +1,22 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-import { Header, Title, Main, Container, GoBackButtonContainer } from './styles.ts'
+import { Header, Title, Main, Container } from './styles.ts'
 import { SettingsButton } from "../../../components/SettingsButtons/SettingsButton.tsx";
 import { GoBackButton } from "../../../components/GoBackButton/GoBackButton.tsx";
 
 const Settings: React.FC = () => {
+    const navigation = useNavigation();
+
+    const handleToProfile = () => {
+        navigation.navigate("Profile")
+    };
+
     return(
         <SafeAreaView>
             <Container>
-                <GoBackButtonContainer>
                     <GoBackButton/>
-                </GoBackButtonContainer>
-                
                 <Header>
                     <Title>Configurações</Title>
                 </Header>
@@ -21,7 +25,7 @@ const Settings: React.FC = () => {
                     <SettingsButton 
                         icon="person-outline"
                         name="Perfil"
-                        onPress={() => {console.log("botão funcional")}}
+                        onPress={handleToProfile}
                     />
 
                     <SettingsButton 

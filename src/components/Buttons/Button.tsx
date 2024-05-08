@@ -12,7 +12,7 @@ interface ButtonProps {
   iconName?: string;
   isLoading?: boolean;
   disabled?: boolean;
-  variant?: "primary" | "purchase" | "indicator" | "toCard" | "googleSocial" | "facebookSocial" | "transparent";
+  variant?: "primary" | "purchase" | "indicator" | "toCard" | "transparent";
   style?: TouchableOpacityProps["style"];
   width?: number
 }

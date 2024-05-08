@@ -2,14 +2,17 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-  padding: ${RFValue(20)}px;
+    width: 100%;
+    height: 100%;
+    padding: ${RFValue(20)}px;
+    background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Header = styled.View`
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding: ${RFValue(20)}px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: ${RFValue(20)}px;
 `;
 
 export const Title = styled.Text`
@@ -33,9 +36,9 @@ export const ViewButton = styled.View`
 `;
 
 export const Main = styled.View`
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
+    gap: ${RFValue(15)}px;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Footer = styled.View`

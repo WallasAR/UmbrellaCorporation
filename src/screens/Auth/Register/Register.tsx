@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Input } from "../../../components/Input/Input";
 import { Button } from "../../../components/Buttons/Button";
+import { ButtonSocial } from "../../../components/ButtonSocial/ButtonSocial";
 
 import { Container, Header, Title, Description, Main, Footer, ViewButton, SignInContainer, Label, Link } from "./styles";
 
@@ -25,18 +26,25 @@ const Register: React.FC = () => {
 
             <Description>Registrar-se com</Description>
             <ViewButton>
-                <Button
+              <ButtonSocial 
+                  widthSvg="25%"
+                  heightSvg="50%"
                   title="Google" 
                   iconName="logo-google"
-                  variant="googleSocial"
-                  onPress={() => {console.log("oAuth2 Google Cloud!")} }
-                />
-                <Button
-                  title="Facebook" 
-                  iconName="logo-facebook"
-                  variant="facebookSocial"
-                  onPress={() => {console.log(" Trocar para instagram e instalar api https://www.npmjs.com/package/react-native-instagram-login")} }
-                />
+                  onPress={() => {console.log("oAuth2 with google Cloud")}}
+                  uriSvg="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
+                  />
+
+                <ButtonSocial 
+                  title="Instagram" 
+                  linearGradientEnabled
+                  Color1={COLORS.IYELLOW}
+                  Color2={COLORS.IPINK}
+                  Color3={COLORS.IPURPLE}
+                  Color4={COLORS.IBERRY}
+                  iconName="logo-instagram" 
+                  onPress={() => {console.log("check https://www.npmjs.com/package/react-native-instagram-login")}}
+                  />
               </ViewButton>
 
           </Header>

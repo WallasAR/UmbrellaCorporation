@@ -14,18 +14,13 @@ export const Header = styled.View`
     margin-top: ${RFValue(20)}px;
 `;
 
-export const GoBackButtonContainer = styled.View`
-    flex-direction: row;
-    margin-top: ${RFValue(20)}px;
-`;
-
 export const Title = styled.Text`
     font-size: ${RFValue(25)}px;
     font-family: ${({theme}) => theme.FONTS.TITLE};
-    color: ${({theme}) => theme.COLORS.RED4};
+    color: ${({theme}) => theme.COLORS.RED3};
 `;
 
 export const Main = styled.View`
     padding: ${RFValue(25)}px ${RFValue(10)}px ${RFValue(10)}px ${RFValue(10)}px;
-    gap: 15px;
+    gap: ${RFValue(15)}px;
 `;

@@ -1,26 +1,27 @@
 import React from "react";
-import { TouchableOpacity } from "react-native"; 
 
-import {OptionsContainer, ConfigName, IconArrow, IconStyle, ContainerIcon } from './style.ts'
+import {Container, OptionsContainer, ConfigName, IconArrow, IconStyle, ViewRight, Info } from './styles.ts'
 
 interface Props {
     icon?: string;
     name: string;
+    info?: string;
     onPress: () => void;
   };
 
-const SettingsButton: React.FC<Props> = ({ icon, name, onPress }) => {
+const SettingsButton: React.FC<Props> = ({ icon, name, info, onPress }) => {
     return(
-        <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" onPress={onPress}>
+        <Container activeOpacity={0.8} accessibilityRole="button" onPress={onPress}>
             <OptionsContainer>
-                <ContainerIcon>
-                    <IconStyle name={icon}/>
-                </ContainerIcon>
-                <ConfigName>{name}</ConfigName>
-                <IconArrow name='keyboard-arrow-right'></IconArrow>
+                <IconStyle name={icon}/>
+                <ViewRight>
+                    <ConfigName>{name}</ConfigName>
+                    <Info>{info}</Info>
+                    <IconArrow name="chevron-forward-outline"/>
+                </ViewRight>
             </OptionsContainer>
-        </TouchableOpacity>
+        </Container>
     );
-}   
+};   
 
 export { SettingsButton };

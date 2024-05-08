@@ -54,7 +54,7 @@ const buttonPrimary: ButtonVariant = {
       color: theme.COLORS.WHITE,
     },
   },
-}
+};
 
 const buttonToCard: ButtonVariant = {
   enabled: {
@@ -83,7 +83,7 @@ const buttonToCard: ButtonVariant = {
       color: theme.COLORS.WHITE,
     },
   },
-}
+};
 
 const buttonPurchase: ButtonVariant = {
   enabled: {
@@ -111,7 +111,8 @@ const buttonPurchase: ButtonVariant = {
       color: theme.COLORS.WHITE,
     },
   },
-}
+};
+
 const buttonIndicatorIcon: ButtonVariant = {
   enabled: {
     button: {
@@ -141,71 +142,8 @@ const buttonIndicatorIcon: ButtonVariant = {
       color: "transparent",
     },
   },
-}
-const buttonSocialGoogle: ButtonVariant = {
-  enabled: {
-    button: {
-      backgroundColor: theme.COLORS.WHITE,
-      width: 140,
-      height: 70,
-      borderRadius: 15,
-      
-    },
-    title: {
-      color: theme.COLORS.GRAY4,
-      fontFamily: theme.FONTS.QUICKSANDMEDIUM,
-    },
-    icon: {
-      color: theme.COLORS.GRAY7,
-      size: 28,
-    },
-  },
-  disabled: {
-    button: {
-      backgroundColor: "transparent",
-      width: 0,
-    },
-    title: {
-      color: theme.COLORS.WHITE,
-    },
-    icon: {
-      color: "transparent",
-    },
-  },
-}
+};
 
-const buttonSocialfacebook: ButtonVariant = {
-  enabled: {
-    button: {
-      backgroundColor: theme.COLORS.BLUE,
-      width: 155,
-      height: 70,
-      borderRadius: 15,
-      
-    },
-    title: {
-      color: theme.COLORS.WHITE,
-      fontFamily: theme.FONTS.QUICKSANDMEDIUM,
-      fontSize: 18
-    },
-    icon: {
-      color: theme.COLORS.WHITE,
-      size: 28,
-    },
-  },
-  disabled: {
-    button: {
-      backgroundColor: "transparent",
-      width: 0,
-    },
-    title: {
-      color: theme.COLORS.WHITE,
-    },
-    icon: {
-      color: "transparent",
-    },
-  },
-}
 const buttonTransparent: ButtonVariant = {
   enabled: {
     button: {
@@ -232,13 +170,12 @@ const buttonTransparent: ButtonVariant = {
       color: "transparent",
     },
   },
-}  
+};
+
 export const variants = {
   toCard: buttonToCard,
   primary: buttonPrimary,
   purchase: buttonPurchase,
   indicator: buttonIndicatorIcon,
   transparent: buttonTransparent,
-  googleSocial: buttonSocialGoogle,
-  facebookSocial: buttonSocialfacebook,
 };

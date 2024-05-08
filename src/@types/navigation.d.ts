@@ -6,6 +6,7 @@ export declare global {
       RecoverPass: undefined;
       Marketplace: undefined;
       ProductDetail: undefined;
+      Profile: undefined;
     };
   };
 };
