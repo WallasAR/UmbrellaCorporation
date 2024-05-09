@@ -1,7 +1,6 @@
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Container, Content, Icon, InnerButton } from "./styles";
-import theme from "../../styles/theme"
 
 function TabBar({ state, descriptors, navigation }: any) {
   return (

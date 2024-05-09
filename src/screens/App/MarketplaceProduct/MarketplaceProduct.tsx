@@ -1,28 +1,46 @@
 import React, { useState } from "react";
 import { FlatList } from "react-native";
 import { useTheme } from "styled-components";
+import { useModal } from "../../../hooks/Modal";
+import { useNavigation } from "@react-navigation/native";
 
-import { TextArea } from "../../../components/Input/Input"
+import { Msg } from "../../../components/Msg/Msg";
+import { TextArea } from "../../../components/Input/Input";
 import { Button } from "../../../components/Buttons/Button";
-import { StarRating } from "../../../components/RatingSystem/StarRating/StarRating";
 import { CardFull } from "../../../components/Card/Full/CardFull";
-import { CardFrame, CardFrameSmall } from "../../../components/Card/CardFrame/CardFrame";
+import { StarRating } from "../../../components/RatingSystem/StarRating/StarRating";
+import { CardFrameSmall } from "../../../components/Card/CardFrame/CardFrame";
 import { UserReviewLayout } from "../../../components/RatingSystem/UserReviewLayout/UserReviewLayout";
 
 import { Container, Header, Section, DescriptionTitle, DescriptionText, SubTitle, Label, BtnContainer, UserRatingContainer, MakeRatingContainer } from "./styles";
 
 
 const MarketplaceProduct: React.FC = () => {
+
   const { COLORS } = useTheme()
+  const navigation = useNavigation();
+
   // Extende o conteiner de avaliações
   const [expanded, setExpanded] = useState(false)
+
   // Atualiza os dados da lista para evitar erros
   const [listKey, setListKey] = useState("initial");
+
   // muda os estados com onPress
   const toggleExpanded = () => {
     setExpanded(!expanded)
     setListKey(listKey === "initial" ? "updated" : "initial")
-  }
+  };
+  
+  const handleToCart = () => {
+    navigation.navigate("Cart")
+  };
+
+  const handleToMarcketplace = () => {
+    navigation.navigate("Marketplace")
+  };
+  
+  const { isActive, toggleModal } = useModal();
   
   // Dados para a lista de avaliações de usuários
   const userReviews = [
@@ -87,11 +105,22 @@ const MarketplaceProduct: React.FC = () => {
           )}
           {item.key === "content" && ( // Renderiza o conteúdo
             <Container>
+              <Msg
+                showMoreButtons
+                buttonRight="Sim"
+                isActive={isActive}
+                toggleModal={toggleModal}
+                header="Ir para carrinho"
+                buttonLeft="Continuar comprando"
+                description="Produto adicionado! Deseja ir para o carrinho?"
+                onPressLeft={handleToMarcketplace}
+                onPressRight={handleToCart}
+              />
               <BtnContainer>
                 <Button
-                  title="Adicionar ao carrinho" 
                   variant="toCard"
-                  onPress={() => {console.log("Botão funcional")} }
+                  onPress={toggleModal}
+                  title="Adicionar ao carrinho" 
                 />
               </BtnContainer>
 

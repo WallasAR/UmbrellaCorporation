@@ -1,12 +1,14 @@
-import React from "react"
+import React from "react";
 import { useTheme } from "styled-components";
+import { useModal } from "../../../hooks/Modal";
+import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
-import Icon from "react-native-vector-icons/Ionicons"
+import { Msg } from "../../../components/Msg/Msg";
 import { Input } from "../../../components/Input/Input";
 import { Button } from "../../../components/Buttons/Button";
-import { Alert } from "react-native";
-import { Container, Header, Title, Description, Main, Footer, LinkContainer, Link } from "./styles" 
+
+import { Container, Header, Title, Description, Main, Footer, LinkContainer, Link } from "./styles";
 
 const RecoverPass: React.FC = () => {
   const { COLORS } = useTheme();
@@ -14,7 +16,9 @@ const RecoverPass: React.FC = () => {
   
   const handleGoToLogin = () => {
     navigation.navigate("Login")
-  }
+  };
+
+  const { isActive, toggleModal } = useModal();
 
   return (
     <Container>
@@ -41,14 +45,20 @@ const RecoverPass: React.FC = () => {
           autoCapitalize="none"   
           keyboardType="default"
           iconName="mail-outline"
-          iconColor={COLORS.GRAY4}    
+          iconColor={COLORS.GRAY4}  
         />
 
         <Button
           title="Enviar" 
           variant="primary"
-          onPress={() => {Alert.alert( "Confirmação" ,"Um email será enviado para")} }
-          style={{ width: "90%", height: 40, borderRadius: 10  }}
+          onPress={toggleModal}
+          style={{ width: "90%", height: 40, borderRadius: 10 }}
+        />
+        <Msg
+          isActive={isActive}
+          header="E-mail Enviado"
+          toggleModal={toggleModal}
+          description="O email foi enviado para wallasarprofissional@gmail.com"
         />
       </Main>
       <Footer>

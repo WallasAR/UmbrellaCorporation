@@ -2,8 +2,9 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-  padding: ${RFValue(20)}px;
   margin: auto;
+  padding: ${RFValue(20)}px;
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const LinkContainer = styled.Pressable`

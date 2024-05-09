@@ -1,5 +1,8 @@
 import React from "react";
+import { useModal } from "../../../hooks/Modal";
+import { useNavigation } from "@react-navigation/native";
 
+import { Msg } from "../../../components/Msg/Msg";
 import { GoBackButton } from "../../../components/GoBackButton/GoBackButton";
 import { SettingsButton } from "../../../components/SettingsButtons/SettingsButton";
 
@@ -7,6 +10,17 @@ import { Container, Header, Main, Footer, Avatar, Username, ViewFooter, IconButt
 import { TouchableOpacity } from "react-native";
 
 const Profile: React.FC = () => {
+
+  const { isActive, toggleModal } = useModal();
+  const { isActive: isActive2, toggleModal: toggleModal2 } = useModal();
+
+  const navigation = useNavigation();
+
+
+  const handleToLogin = () => {
+    navigation.navigate("Login")
+  };
+
   return(
     <Container>
       <GoBackButton/>
@@ -30,7 +44,18 @@ const Profile: React.FC = () => {
       </Main>
       <Footer>
         <ViewFooter>
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" onPress={toggleModal2}>
+            <Msg
+              showMoreButtons
+              buttonRight="Sair"
+              isActive={isActive2}
+              header="Sair da conta"
+              toggleModal={toggleModal2}
+              buttonLeft="Cancelar"
+              description="Deseja sair dessa conta?"
+              onPressLeft={toggleModal2}
+              onPressRight={handleToLogin}
+            />
             <IconButton>
               <Icon
                 name="exit-outline"
@@ -41,7 +66,19 @@ const Profile: React.FC = () => {
         </ViewFooter>
 
         <ViewFooter>
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} accessibilityRole="button" onPress={toggleModal}>
+            <Msg 
+              showPass  
+              showMoreButtons
+              isActive={isActive}
+              buttonRight="Excluir"
+              buttonLeft="Cancelar"
+              header="Excluir conta"
+              toggleModal={toggleModal}
+              description="Essa ação não pode ser desfeita. Continuar mesmo assim?"
+              onPressLeft={toggleModal}
+              onPressRight={handleToLogin}
+            />
             <IconButton>
               <Icon
                 name="trash-outline" 

@@ -1,12 +1,16 @@
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
+      // AuthRoutes
       Login: undefined;
       Register: undefined;
       RecoverPass: undefined;
-      Marketplace: undefined;
-      ProductDetail: undefined;
+      // AppRoutes
       Profile: undefined;
+      ProductDetail: undefined;
+      // TabRoutes
+      Cart: undefined;
+      Marketplace: undefined;
     };
   };
 };

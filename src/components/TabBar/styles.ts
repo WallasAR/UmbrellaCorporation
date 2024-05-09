@@ -13,7 +13,7 @@ export const Content = styled.View`
   gap: ${RFValue(12)}px;
   justify-content: center;
   margin-bottom: ${RFValue(20)}px;
-  border-radius: ${RFValue(99)}px;
+  border-radius: ${RFValue(20)}px;
   background-color: ${({ theme }) => theme.COLORS.RED1};
   
   position: absolute;
