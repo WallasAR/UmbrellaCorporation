@@ -46,24 +46,3 @@ export const Footer = styled.View`
     justify-content: center;
     margin-top: ${RFValue(50)}px;
 `;
-
-export const SignInContainer = styled.Pressable`
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: ${RFValue(8)}px;
-`;
-
-export const Label = styled.Text`
-    font-size: ${RFValue(12)}px;
-    color: ${({ theme }) => theme.COLORS.GRAY4};
-    font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
-`;
-
-export const Link = styled.Text`
-    text-decoration: underline;
-    font-size: ${RFValue(12)}px;
-    margin-left: ${RFValue(5)}px;
-    color: ${({ theme }) => theme.COLORS.RED3};
-    font-family: ${({ theme }) => theme.FONTS.QUICKSANDSEMIBOLD};
-`;

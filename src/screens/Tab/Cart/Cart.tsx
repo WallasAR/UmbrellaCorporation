@@ -1,16 +1,22 @@
 import React from "react";
 import { SafeAreaView, FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Resume } from "../../../components/Resume/Resume";
-
+import { Button } from "../../../components/Buttons/Button";
+import { CardSmall } from "../../../components/Card/Small/CardSmall";
 
 import { Container, Header, Title, Main, Footer, PurchaseResume } from "./styles";
-import { CardSmall } from "../../../components/Card/Small/CardSmall";
-import { Button } from "../../../components/Buttons/Button";
 
 const Cart: React.FC = () => {
+  
+  const navigation = useNavigation();
 
-    const CartTest = [
+  const handleToPayment = () => {
+    navigation.navigate("PaymentMethod")
+  };
+
+  const CartTest = [
         {
           id: "1",
           title: "Dipirona monoidratada 500Mg/mL",
@@ -92,44 +98,43 @@ const Cart: React.FC = () => {
             paymentMethod: "Pix",
           },
         
-    ];
+  ];
 
-    return(
-    <SafeAreaView>
-        <Container>
-            <Header>
-                <Title>Carrinho</Title>
-            </Header>
+  return(
+  <SafeAreaView>
+      <Container>
+          <Header>
+              <Title>Carrinho</Title>
+          </Header>
 
-            <Main>
-                <FlatList
-                    data={CartTest}
-                    keyExtractor={item => item.id.toString()}
-                    renderItem={({ item, index }) => (
-                    <CardSmall
-                        iconName={false}
-                        price={item.price}
-                        title={item.title}
-                        onPress={() => {}}
-                        imageSource={item.imageSource}   
-                    />
-                    )}
+          <Main>
+            <FlatList
+                data={CartTest}
+                keyExtractor={item => item.id.toString()}
+                renderItem={({ item, index }) => (
+                <CardSmall
+                  iconName={false}
+                  price={item.price}
+                  title={item.title}
+                  onPress={() => {}}
+                  imageSource={item.imageSource}   
                 />
-            </Main>
-            <Footer>
-                <PurchaseResume>
-                <Resume />
-                <Button
-                    title="Comprar"
-                    variant="purchase"
-                    onPress={() => {console.log("levar para PaymentMethod")}}
-                />
-                </PurchaseResume>
-            </Footer>
-            
-        </Container>
+              )}
+            />
+          </Main>
+          <Footer>
+            <PurchaseResume>
+              <Resume/>
+              <Button
+                title="Comprar"
+                variant="purchase"
+                onPress={handleToPayment}
+              />
+            </PurchaseResume>
+          </Footer>  
+      </Container>
     </SafeAreaView>
-    );
+  );
 }
 
-export { Cart } 
+export { Cart };

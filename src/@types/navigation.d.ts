@@ -7,10 +7,13 @@ export declare global {
       RecoverPass: undefined;
       // AppRoutes
       Profile: undefined;
+      Comprovant: undefined;
       ProductDetail: undefined;
+      PaymentMethod: undefined;
       // TabRoutes
       Cart: undefined;
       Marketplace: undefined;
+      OrderHystory: undefined;
     };
   };
 };

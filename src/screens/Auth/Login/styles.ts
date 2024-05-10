@@ -31,7 +31,6 @@ export const Footer = styled.View`
 
 export const Title = styled.Text`
     text-align: center;
-    /* margin-top: ${RFValue(40)}px; */
     font-size: ${RFValue(24)}px;
     color: ${({ theme }) => theme.COLORS.BLACK};
     font-family: ${({ theme }) => theme.FONTS.TITLE};
@@ -48,27 +47,6 @@ export const Description = styled.Text`
 export const ViewButton = styled.View`
     flex-direction: row;
     margin-bottom: ${RFValue(15)}px;
-`;
-
-export const SignUpContainer = styled.Pressable`
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: ${RFValue(10)}px;
-`;
-
-export const Label = styled.Text`
-    font-size: ${RFValue(12)}px;
-    color: ${({ theme }) => theme.COLORS.GRAY4};
-    font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
-`;
-
-export const Link = styled.Text`
-    text-decoration: underline;
-    font-size: ${RFValue(12)}px;
-    margin-left: ${RFValue(5)}px;
-    color: ${({ theme }) => theme.COLORS.RED3};
-    font-family: ${({ theme }) => theme.FONTS.QUICKSANDSEMIBOLD};
 `;
 
 export const ForgotPassContainer = styled.View`

@@ -89,7 +89,7 @@ const buttonPurchase: ButtonVariant = {
   enabled: {
     button: {
       backgroundColor: theme.COLORS.GREEN,
-      width: 135,
+      width: 155,
       borderRadius: 50
     },
     title: {

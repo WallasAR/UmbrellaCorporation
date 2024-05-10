@@ -1,25 +1,47 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-import { GoBackButton } from "../../../components/GoBackButton/GoBackButton";
+import { Button } from "../../../components/Buttons/Button";
+import { Link } from "../../../components/Link/Link"
 
-import { Container, Header, Status, Main, Icon, Footer, LinkContainer, Link } from "./styles";
+import { Container, Header, Status, Main, Footer, ConfirmedAnimation, NavLinkContainer } from "./styles";
+import { useTheme } from "styled-components";
 
 const Comprovant: React.FC = () => {
+  const { COLORS } = useTheme();
+ 
+  const navigation = useNavigation();
+
+  const handleToOrderHystory = () => {
+    navigation.navigate("OrderHystory")
+  };
+
   return (
     <Container>
-      <GoBackButton/>
+      <NavLinkContainer>
+      <Link
+        linkText="Ir para pedidos"
+        linkColor={COLORS.GREEN}
+        onPress={handleToOrderHystory}
+      />
+      </NavLinkContainer>
       <Header>
         <Status>Transação realizada com sucesso!</Status>
       </Header>
       <Main>
-        <Icon
-          name="checkmark-outline"
-        />
+      <ConfirmedAnimation
+        autoPlay
+        loop={false}
+        source={require("../../../assets/animations/Confirmed.json")}
+      />
       </Main>
       <Footer>
-        <LinkContainer onPress={() => {console.log("Acesso ao comprovante provido por serviço externo de pagamento! Se preciso, criar nova tela apenas para visualização do comprovante")}}>
-          <Link>Acessar comprovante</Link>
-        </LinkContainer>
+        <Link
+          underline
+          linkText="Acessar comprovante"
+          linkColor={COLORS.GREEN}
+          onPress={() => {console.log("Acesso ao comprovante provido por serviço externo de pagamento! Se preciso, criar nova tela apenas para visualização do comprovante")}}
+        />
       </Footer>
     </Container>
   )

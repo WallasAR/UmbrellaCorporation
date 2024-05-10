@@ -1,15 +1,17 @@
+import LottieView from "lottie-react-native";
 import styled from "styled-components/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-  margin: auto;
+  flex: 1;
   padding: ${RFValue(20)}px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Header = styled.View`
   width: 100%;
+  margin: auto 0;
   align-items: center;
   justify-content: center;
 `;
@@ -22,6 +24,7 @@ export const Status = styled.Text`
 `;
 
 export const Main = styled.View`
+  margin: auto 0;
   align-items: center;
   gap: ${RFValue(10)}px;
   justify-content: center;
@@ -36,18 +39,16 @@ export const Icon = styled(Ionicons)`
 `;
 
 export const Footer = styled.View`
+  margin: auto 0;
   align-items: center;
   justify-content: center;
 `;
 
-export const LinkContainer = styled.Pressable`
-  
+export const ConfirmedAnimation = styled(LottieView)`
+  width: ${RFValue(200)}px;
+  height: ${RFValue(200)}px;
 `;
 
-export const Link = styled.Text`
-  text-decoration: underline;
-  font-size: ${RFValue(12)}px;
-  margin-left: ${RFValue(5)}px;
-  color: ${({ theme }) => theme.COLORS.GREEN};
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDSEMIBOLD};
+export const NavLinkContainer = styled.View`
+  margin-top: ${RFValue(40)}px;
 `;

@@ -1,13 +1,15 @@
 import React from "react";
-import { KeyboardAvoidingView, SafeAreaView } from "react-native";
 import { useTheme } from "styled-components";
 import { useNavigation } from "@react-navigation/native";
+import { KeyboardAvoidingView, SafeAreaView } from "react-native";
 
+import { Link } from "../../../components/Link/Link";
 import { Input } from "../../../components/Input/Input";
 import { Button } from "../../../components/Buttons/Button";
 import { ButtonSocial } from "../../../components/ButtonSocial/ButtonSocial";
 
-import { Container, Header, Title, Description, Main, Footer, ViewButton, SignInContainer, Label, Link } from "./styles";
+
+import { Container, Header, Title, Description, Main, Footer, ViewButton } from "./styles";
 
 const Register: React.FC = () => {
   const { COLORS } = useTheme();
@@ -86,10 +88,14 @@ const Register: React.FC = () => {
                   variant="primary"
                   onPress={() => {console.log("Botão funcional")} }
                 />
-                <SignInContainer onPress={handleGoToLogin}>
-                  <Label>Já tem uma conta?</Label>
-                  <Link>Entre</Link>
-              </SignInContainer>
+            <Link
+              underline
+              linkText="Entre"
+              linkColor={COLORS.RED3}
+              labelColor={COLORS.GRAY4}
+              onPress={handleGoToLogin}
+              label="Já tem uma conta?"
+            />
           </Footer>
         </Container>
       </SafeAreaView>

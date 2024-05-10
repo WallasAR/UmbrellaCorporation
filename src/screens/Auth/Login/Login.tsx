@@ -6,7 +6,8 @@ import { SafeAreaView, KeyboardAvoidingView } from "react-native";
 import { LinearGradient } from "react-native-linear-gradient";
 import MaskedView from "@react-native-masked-view/masked-view";
 
-import { Input } from "../../../components/Input/Input"
+import { Link } from "../../../components/Link/Link";
+import { Input } from "../../../components/Input/Input";
 import { Button } from "../../../components/Buttons/Button";
 import { ButtonSocial } from "../../../components/ButtonSocial/ButtonSocial";
 
@@ -18,9 +19,6 @@ import {
   Title, 
   Description, 
   ViewButton, 
-  SignUpContainer, 
-  Label, 
-  Link, 
   ForgotPassContainer 
 } from "./styles";
 
@@ -122,10 +120,14 @@ const Login: React.FC = () => {
               variant="primary"
               onPress={() => {console.log("Botão funcional")} }
             />
-            <SignUpContainer onPress={handleGoToRegister}>
-              <Label>Ainda não têm uma conta?</Label>
-              <Link>Registre-se</Link>
-            </SignUpContainer>
+            <Link
+              underline
+              linkText="Registre-se"
+              linkColor={COLORS.RED3}
+              labelColor={COLORS.GRAY4}
+              onPress={handleGoToRegister}
+              label="Ainda não têm uma conta?"
+            />
           </Footer>
         </Container>
       </SafeAreaView>
