@@ -34,5 +34,6 @@ export const PurchaseResume = styled.View`
     justify-content: space-around;
 
     position: absolute;
-    top: ${RFValue(280)}px;
+    /* top: ${RFValue(280)}px; */
+    bottom: ${RFValue(220)}px;
 `;

@@ -108,7 +108,7 @@ const Cart: React.FC = (props) => {
 
           <Main>
             <FlatList
-                data={[props.route.params]}
+                data={CartTest}
                 keyExtractor={item => item.id.toString()}
                 renderItem={({ item, index }) => (
                 <CardSmall

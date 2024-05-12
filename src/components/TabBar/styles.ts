@@ -12,7 +12,7 @@ export const Content = styled.View`
   flex-direction: row;
   gap: ${RFValue(12)}px;
   justify-content: center;
-  margin-bottom: ${RFValue(20)}px;
+  margin-bottom: ${RFValue(50)}px;
   border-radius: ${RFValue(20)}px;
   background-color: ${({ theme }) => theme.COLORS.RED1};
   
