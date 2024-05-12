@@ -1,9 +1,8 @@
 import React from "react";
 import { Container, Content, ImgContainer, Img, Name, PriceContainer, Price, PriceType, Icon, Rating, StarRating, AmountRating } from "./styles";
 import { TouchableOpacity, View } from "react-native";
-import { RectButtonProps } from 'react-native-gesture-handler';
 
-interface Props extends RectButtonProps {
+interface Props {
   title: string;
   price: string;
   starRating: string;

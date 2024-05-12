@@ -5,6 +5,7 @@ import { Container, FrameCard, IndicatorContainer } from "./styles";
 import { Card } from "../Regular/Card";
 import { CardSmall } from "../Small/CardSmall";
 import { Button } from "../../Buttons/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const InfoCards = [
   {id: "1",
@@ -79,11 +80,14 @@ const InfoCards = [
   },
 ]
 
-interface CardFrameProps {
-  onPress: () => void;
-};
+const CardFrame: React.FC = () => {
 
-const CardFrame: React.FC<CardFrameProps> = ({ onPress = () => {} }) => {
+  const navigation = useNavigation();
+
+  const handleCardPress = (item: any) => {
+    navigation.navigate("ProductDetail",  item )
+  };
+
   return(
     <Container>
       <FlatList
@@ -92,7 +96,7 @@ const CardFrame: React.FC<CardFrameProps> = ({ onPress = () => {} }) => {
         renderItem={({ item }) => (
           <FrameCard>
               <Card 
-                onPress={onPress}
+                onPress={() => handleCardPress(item)}
                 price={item.price}
                 title={item.title}
                 starRating={item.starRating}

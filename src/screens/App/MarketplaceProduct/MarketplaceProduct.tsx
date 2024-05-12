@@ -14,11 +14,12 @@ import { UserReviewLayout } from "../../../components/RatingSystem/UserReviewLay
 
 import { Container, Header, Section, DescriptionTitle, DescriptionText, SubTitle, Label, BtnContainer, UserRatingContainer, MakeRatingContainer } from "./styles";
 
-
-const MarketplaceProduct: React.FC = () => {
-
+const MarketplaceProduct: React.FC = (props) => {
   const { COLORS } = useTheme()
   const navigation = useNavigation();
+
+  // State para mostrar ou esconder modal
+  const { isActive, toggleModal } = useModal();
 
   // Extende o conteiner de avaliações
   const [expanded, setExpanded] = useState(false)
@@ -32,15 +33,22 @@ const MarketplaceProduct: React.FC = () => {
     setListKey(listKey === "initial" ? "updated" : "initial")
   };
   
+  const product = {
+    title: props.route.params.title,
+    imageSource: props.route.params.imageSource,
+    price: props.route.params.price,
+    id: props.route.params.id,
+  }
+
   const handleToCart = () => {
-    navigation.navigate("Cart")
+    navigation.navigate("Cart", product)
   };
 
   const handleToMarcketplace = () => {
     navigation.navigate("Marketplace")
   };
   
-  const { isActive, toggleModal } = useModal();
+  
   
   // Dados para a lista de avaliações de usuários
   const userReviews = [
@@ -96,9 +104,9 @@ const MarketplaceProduct: React.FC = () => {
           {item.key === "header" && ( // Renderiza o cabeçalho
             <Header>
               <CardFull 
-                title="Dipirona monoidratada 500Mg/mL" 
-                imageSource="https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2023/02/tablets-5620566-1920.jpg"
-                price="R$15,00" 
+                title={props.route.params.title}
+                imageSource={props.route.params.imageSource}
+                price={props.route.params.price}
                 stockAmount="1500"
               />
             </Header>

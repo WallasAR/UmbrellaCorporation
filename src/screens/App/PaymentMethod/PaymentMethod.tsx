@@ -1,76 +1,89 @@
-import React from "react";
+import React,{ useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
-import { GoBackButton } from "../../components/GoBackButton/GoBackButton";
-import { PaymentButton } from "../../components/PaymentButton/PaymentButton";
+import { GoBackButton } from "../../../components/GoBackButton/GoBackButton";
+import { PaymentOptions } from "../../../components/PaymentOptions/PaymentOptions";
 
-import { ClientDelivery, Text, Container, Header, Main, Footer, Title, ViewFooter, ViewButton } from "./styles";
-import { TouchableOpacity } from "react-native";
-import { SettingsButton } from "../../components/SettingsButtons/SettingsButton";
-import { Button } from "../../components/Button";
+import { Container, Header, Title, SubTitle, Main, Footer, ButtonContent  } from "./styles";
+import { Button } from "../../../components/Buttons/Button";
+import { ScrollView } from "react-native";
 
-const Login: React.FC = () => {
-  return(
+const PaymentMethod: React.FC = () => {
+  const [choice, setChoice] = useState("");
+  const [receivingMethodChoice, setReceivingMethodChoice] = useState("");
+  
+  const navigation = useNavigation();
+
+  const handleToComprovant = () => {
+    navigation.navigate("Comprovant")
+  }
+
+  return (
     <Container>
-      <TouchableOpacity>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <GoBackButton/>
-      </TouchableOpacity>
-      <Header>
-        <Title>Informações</Title>
-      </Header>
-      <Main>
-        <Text>Forma de Pagamento</Text>
-        <TouchableOpacity>
-          <SettingsButton
+        <Header> 
+          <Title>Informações{"\n"}adicionais</Title>
+        </Header>
+        <Main>
+          <SubTitle>Forma de pagamento</SubTitle>
+
+          <PaymentOptions
             name="Dinheiro"
+            onPress={() => {}}
             icon="cash-outline"
-            onPress={() => {}}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <SettingsButton
+            onChange={setChoice}
+            checkedValue={choice}
+            options={[{value: "Cash"}]}
+          />  
+          <PaymentOptions
             name="Pix"
+            onPress={() => {}}
+            onChange={setChoice}
+            checkedValue={choice}
             icon="qr-code-outline"
+            options={[{value: "Pix"}]}
+          />  
+          <PaymentOptions
             onPress={() => {}}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <SettingsButton
-            name="Cartão"
+            onChange={setChoice}
+            checkedValue={choice}
             icon="card-outline"
-            onPress={() => {}}
-          />
-        </TouchableOpacity>
-        <Text>Método de Recebimento</Text>
-      </Main>
-      <Footer>
-        <ViewFooter>
-            <Button
-              title="Pegar no Estabelecimento"
+            name="Cartão de crédito/Debito"
+            options={[{value: "Credit/Debit"}]}
+          />  
+
+          <SubTitle>Método de recebimento</SubTitle>
+          <ButtonContent>
+            <PaymentOptions
               onPress={() => {}}
-              variant="paymentChoice"
+              onChange={setReceivingMethodChoice}
+              checkedValue={receivingMethodChoice}
+              icon="map-outline"
+              name="No estabelecimento"
+              options={[{value: "Local"}]}
             />
-
-            <Button
-              title="Delivery"
-              onPress={() => {}}
-              variant="paymentChoice"
-
-            /> 
-
-        </ViewFooter>
-        <ClientDelivery> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam nemo error, cum inventore hic consequuntur tempore adipisci omnis veniam aperiam similique at rerum illum, molestias provident voluptatibus ducimus ex necessitatibus!
-        </ClientDelivery>
-            <ViewButton>
-
-              <Button
-                title="Confirmar"
-                onPress={() => {}}
-                variant="purchase"
-              /> 
-            </ViewButton>
-      </Footer>
+            <PaymentOptions
+            onPress={() => {}}
+            onChange={setReceivingMethodChoice}
+            checkedValue={receivingMethodChoice}
+            icon="cube-outline"
+            name="Delivery"
+            options={[{value: "Delivery"}]}
+            isDelivery
+          />  
+          </ButtonContent>
+        </Main>
+        <Footer>
+          <Button
+            title="Confirmar"
+            variant="purchase"
+            onPress={handleToComprovant}
+          />
+        </Footer>
+      </ScrollView>
     </Container>
   )
-};
+}
 
-export { Login };
+export { PaymentMethod };

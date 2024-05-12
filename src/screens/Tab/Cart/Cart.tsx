@@ -8,8 +8,7 @@ import { CardSmall } from "../../../components/Card/Small/CardSmall";
 
 import { Container, Header, Title, Main, Footer, PurchaseResume } from "./styles";
 
-const Cart: React.FC = () => {
-  
+const Cart: React.FC = (props) => {
   const navigation = useNavigation();
 
   const handleToPayment = () => {
@@ -109,7 +108,7 @@ const Cart: React.FC = () => {
 
           <Main>
             <FlatList
-                data={CartTest}
+                data={[props.route.params]}
                 keyExtractor={item => item.id.toString()}
                 renderItem={({ item, index }) => (
                 <CardSmall
