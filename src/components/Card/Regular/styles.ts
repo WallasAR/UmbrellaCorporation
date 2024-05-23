@@ -7,12 +7,11 @@ export const Container = styled.View`
   height: ${RFValue(240)}px;
   border-radius: ${RFValue(10)}px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
-  elevation: 3;
 `;
 
 export const Content = styled.View`
   flex: 1;
-  padding-left: ${RFValue(10)}px;
+  padding: ${RFValue(10)}px;
 `;
 
 export const ImgContainer = styled.View`
@@ -25,26 +24,26 @@ export const ImgContainer = styled.View`
 export const Img = styled.Image`
   width: 100%;
   height: 100%;
+  object-fit: contain;
 `;
 
 export const Name = styled.Text`
+  text-align: left;
   font-size: ${RFValue(14)}px;
   margin-bottom: ${RFValue(5)}px;
-  margin-top: ${RFValue(15)}px;
-  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
   color: ${({ theme }) => theme.COLORS.BLACK};
-  text-align: left;
+  font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
 `;
 
 export const PriceContainer = styled.View`
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 export const Price = styled.Text`
   font-size: ${RFValue(14)}px;
-  font-family: ${({ theme }) => theme.FONTS.DMSANSBOLD};
   color: ${({ theme }) => theme.COLORS.RED2};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSBOLD};
 `;
 
 export const PriceType = styled.Text`
@@ -56,9 +55,13 @@ export const PriceType = styled.Text`
 `;
 
 export const Rating = styled.View`
-  flex-direction: row;
+  flex: 1;
   align-items: center;
-  margin-top: ${RFValue(5)}px;
+  flex-direction: row;
+  padding: ${RFValue(10)}px;
+
+  position: absolute;
+  bottom: 0;
 `;
 
 export const Icon = styled(AntDesign)`
@@ -75,7 +78,7 @@ export const StarRating = styled.Text`
 
 export const AmountRating = styled.Text`
   font-size: ${RFValue(10)}px;
-  margin-left: ${RFValue(7)}px;
-  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+  margin-left: ${RFValue(8)}px;
   color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
 `;

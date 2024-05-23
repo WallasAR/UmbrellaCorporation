@@ -1,39 +1,32 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export const Container = styled.View`
-  border: 1px dashed ${({ theme }) => theme.COLORS.GRAY3};
   overflow: hidden;
   flex-direction: row;
   justify-content: center;
   width: ${RFValue(300)}px;
   height: ${RFValue(80)}px;
   border-radius: ${RFValue(10)}px;
-
-`;
-
-export const ImgContainer = styled.View`
-  height: 100%;
-  width: ${RFValue(80)}px;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  padding: ${RFValue(5)}px;
-`;
-
-export const Img = styled.Image`
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1;
-  border-top-left-radius: ${RFValue(10)}px;
-  border-bottom-left-radius: ${RFValue(10)}px;
-  
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Content = styled.View`
   flex: 1;
   padding: ${RFValue(10)}px;
+`;
+
+export const ImgContainer = styled.View`
+  width: 25%;
+  height: 100%;
+`;
+
+export const Img = styled.Image`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 export const Name = styled.Text`
@@ -45,7 +38,7 @@ export const Name = styled.Text`
 
 export const PriceContainer = styled.View`
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 export const Price = styled.Text`
@@ -55,9 +48,9 @@ export const Price = styled.Text`
 `;
 
 export const PriceType = styled.Text`
-  letter-spacing: ${RFValue(1)}px;
   font-size: ${RFValue(10)}px;
   margin-left: ${RFValue(5)}px;
+  letter-spacing: ${RFValue(1)}px;
   color: ${({ theme }) => theme.COLORS.GRAY4};
   font-family: ${({ theme }) => theme.FONTS.QUICKSANDMEDIUM};
 `;
@@ -78,6 +71,25 @@ export const Icon = styled(AntDesign)`
 `;
 
 export const StarRating = styled.Text`
+  font-size: ${RFValue(12)}px;
+  color: ${({ theme }) => theme.COLORS.BLACK};
+  font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
+`;
+
+export const IoniconsIcon = styled(Ionicons)`
+  font-size: ${RFValue(18)}px;
+  color: ${({ theme }) => theme.COLORS.GRAY7};
+`;
+
+export const PickerContent = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: ${RFValue(15)}px;
+
+`;
+
+export const Amount = styled.Text`
   font-size: ${RFValue(12)}px;
   color: ${({ theme }) => theme.COLORS.BLACK};
   font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};

@@ -2,7 +2,7 @@ import theme from "../../styles/theme";
 
 interface ButtonStyle {
   button: {
-    width?: number;
+    width?: number | string;
     height?: number;
     elevation?: number;
     borderWidth?: number;
@@ -60,11 +60,12 @@ const buttonToCard: ButtonVariant = {
   enabled: {
     button: {
       backgroundColor: theme.COLORS.RED3,
-      width: 280,
-      borderRadius: 50
+      width: "95%",
+      borderRadius: 15
     },
     title: {
       color: theme.COLORS.WHITE,
+      fontSize: 20
     },
     icon: {
       color: theme.COLORS.WHITE,
@@ -102,7 +103,8 @@ const buttonPurchase: ButtonVariant = {
   disabled: {
     button: {
       backgroundColor: theme.COLORS.GRAY5,
-      width: 135,
+      width: 155,
+      borderRadius: 50
     },
     title: {
       color: theme.COLORS.WHITE,
@@ -113,14 +115,15 @@ const buttonPurchase: ButtonVariant = {
   },
 };
 
-const buttonIndicatorIcon: ButtonVariant = {
+const buttonIndicator: ButtonVariant = {
   enabled: {
     button: {
-      backgroundColor: theme.COLORS.WHITE,
-      width: 40,
+      backgroundColor: "transparent",
+      width: "95%",
       height: 40,
-      elevation: 5,
-      borderRadius: 99
+      borderColor: theme.COLORS.RED1,
+      borderWidth: 2,
+      borderRadius: 15
     },
     title: {
       color: theme.COLORS.WHITE,
@@ -176,6 +179,6 @@ export const variants = {
   toCard: buttonToCard,
   primary: buttonPrimary,
   purchase: buttonPurchase,
-  indicator: buttonIndicatorIcon,
+  indicator: buttonIndicator,
   transparent: buttonTransparent,
 };

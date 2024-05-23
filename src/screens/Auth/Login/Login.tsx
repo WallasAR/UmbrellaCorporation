@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "styled-components";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView, KeyboardAvoidingView } from "react-native";
 
 import { LinearGradient } from "react-native-linear-gradient";
 import MaskedView from "@react-native-masked-view/masked-view";
+import { useAuth } from "../../../contexts/Auth";
 
 import { Link } from "../../../components/Link/Link";
 import { Input } from "../../../components/Input/Input";
@@ -24,6 +25,11 @@ import {
 
 
 const Login: React.FC = () => {
+  const { signIn } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
   const { COLORS } = useTheme();
   const navigation = useNavigation();
 
@@ -40,8 +46,7 @@ const Login: React.FC = () => {
       <SafeAreaView>
         <Container>
           <Header>
-            {/* Task pendente: criar linear gradient em "Umbrella Corp." (Feito!)*/}
-            <Title>É bom vê-lo novamente a</Title>
+            <Title>É bom vê-lo novamente</Title>
             <MaskedView maskElement={
               <Title style={{ backgroundColor: "transparent" }}>Umbrella Corp.</Title>
             }>
@@ -90,6 +95,8 @@ const Login: React.FC = () => {
               keyboardType="default"
               iconName="mail-outline"
               iconColor={COLORS.GRAY4}    
+              value={email}
+              onChangeText={setEmail}
             />
             <Input
             leftIcon 
@@ -102,6 +109,8 @@ const Login: React.FC = () => {
             keyboardType="default"
             iconName="key-outline"
             iconColor={COLORS.GRAY4}   
+            value={pass}
+            onChangeText={setPass}
           />
 
           <ForgotPassContainer>
@@ -118,7 +127,7 @@ const Login: React.FC = () => {
             <Button
               title="Entrar" 
               variant="primary"
-              onPress={() => {console.log("Botão funcional")} }
+              onPress={() => signIn(email, pass)}
             />
             <Link
               underline

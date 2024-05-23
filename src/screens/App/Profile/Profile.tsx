@@ -1,40 +1,43 @@
 import React from "react";
+import { useTheme } from "styled-components";
 import { useModal } from "../../../hooks/Modal";
 import { useNavigation } from "@react-navigation/native";
+import { useAuth } from "../../../contexts/Auth";
+
 
 import { Msg } from "../../../components/Msg/Msg";
 import { GoBackButton } from "../../../components/GoBackButton/GoBackButton";
 import { SettingsButton } from "../../../components/SettingsButtons/SettingsButton";
 
-import { Container, Header, Main, Footer, Avatar, Username, ViewFooter, IconButton, Icon, Title  } from "./styles";
+import { Container, Header, Main, Footer, Avatar, Username, ViewFooter, IconButton, Icon, Title, GoBackContent  } from "./styles";
 import { TouchableOpacity } from "react-native";
 
 const Profile: React.FC = () => {
+  const { COLORS } = useTheme();
+
+  const { signOut } = useAuth();
 
   const { isActive, toggleModal } = useModal();
   const { isActive: isActive2, toggleModal: toggleModal2 } = useModal();
 
-  const navigation = useNavigation();
-
-
-  const handleToLogin = () => {
-    navigation.navigate("Login")
-  };
-
   return(
     <Container>
-      <GoBackButton/>
+      <GoBackContent>
+        <GoBackButton
+          color={COLORS.RED1}
+        />
+      </GoBackContent>
       <Header>
         <Avatar
-          source={{ uri: "http://github.com/WallasAR.png" }}
+          source={{ uri: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" }}
         >
         </Avatar>
-        <Username>War</Username>
+        <Username>user</Username>
       </Header>
       <Main>
         <SettingsButton
           name="Conta Conectada"
-          info="wallasarprofissional@gmail.com"
+          info="user@gmail.com" // passar parametro do auth
           onPress={() => {console.log("Ir para tela ConfigInfo")}}
         /> 
         <SettingsButton
@@ -49,12 +52,12 @@ const Profile: React.FC = () => {
               showMoreButtons
               buttonRight="Sair"
               isActive={isActive2}
-              header="Sair da conta"
-              toggleModal={toggleModal2}
               buttonLeft="Cancelar"
-              description="Deseja sair dessa conta?"
+              header="Sair da conta"
+              onPressRight={signOut}
+              toggleModal={toggleModal2}
               onPressLeft={toggleModal2}
-              onPressRight={handleToLogin}
+              description="Deseja sair dessa conta?"
             />
             <IconButton>
               <Icon
@@ -77,7 +80,7 @@ const Profile: React.FC = () => {
               toggleModal={toggleModal}
               description="Essa ação não pode ser desfeita. Continuar mesmo assim?"
               onPressLeft={toggleModal}
-              onPressRight={handleToLogin}
+              onPressRight={signOut}
             />
             <IconButton>
               <Icon
@@ -85,7 +88,7 @@ const Profile: React.FC = () => {
               />
             </IconButton>
           </TouchableOpacity>
-          <Title>Excluir conta</Title>
+          <Title>Excluir {"\n"} conta</Title>
         </ViewFooter>
       </Footer>
     </Container>

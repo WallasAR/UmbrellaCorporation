@@ -61,3 +61,7 @@ export const IconButton = styled.View`
   border-radius: ${RFValue(99)}px;
   border-color: ${({ theme }) => theme.COLORS.GRAY2};
 `;
+
+export const GoBackContent = styled.View`
+  margin: ${RFValue(40)}px 0 ${RFValue(20)}px ${RFValue(10)}px;
+`;

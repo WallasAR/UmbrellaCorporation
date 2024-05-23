@@ -4,16 +4,21 @@ import { RFValue } from 'react-native-responsive-fontsize';
 export const Container = styled.View`
   width: 100%;
   height: 100%;
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const Main = styled.View`
+  flex: 1;
 `;
 
 export const Header = styled.View`
-  margin-bottom: ${RFValue(10)}px;
+  margin: ${RFValue(20)}px 0;
 `;
 
 export const Section = styled.View`
   width: 90%;
   margin-top: ${RFValue(30)}px;
-  padding-horizontal: ${RFValue(10)}px;
+  padding: 0 ${RFValue(10)}px;
 `;
 
 export const DescriptionTitle = styled.Text`

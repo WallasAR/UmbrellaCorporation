@@ -13,7 +13,7 @@ const Comprovant: React.FC = () => {
   const navigation = useNavigation();
 
   const handleToOrderHystory = () => {
-    navigation.navigate("OrderHystory")
+    navigation.navigate("OrderHistory")
   };
 
   return (

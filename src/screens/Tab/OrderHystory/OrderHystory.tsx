@@ -24,7 +24,7 @@ const OrderHistory: React.FC = () => {
       id: "1",
       title: "Dipirona monoidratada 500Mg/mL",
       imageSource:"https://www.farmace.com.br/images/2019/05/18/dip-monoid-500mg,mL.png",
-      price: "R$15,00",
+      price: "15,00",
       amount: "2",
       status: "Entregue",
       payment: "Pago",
@@ -34,7 +34,7 @@ const OrderHistory: React.FC = () => {
       id: "2",
       title:"Cloridrato de ambroxol 100mL",
       imageSource:"https://www.farmace.com.br/images/2019/05/18/clorid-ambroxol-3mg,mL.png",
-      price:"R$10,00",
+      price:"10,00",
       amount: "1",
       status: "Entregue",
       payment: "Pago",
@@ -44,7 +44,7 @@ const OrderHistory: React.FC = () => {
       id: "3",
       title:"Dexametasona elixir 120mL",
       imageSource:"https://www.farmace.com.br/images/2023/05/08/dexam-elixir-01mgml.png",
-      price:"R$18,50",
+      price:"18,50",
       amount: "4",
       status: "Preparando",
       payment: "Pendente",
@@ -54,7 +54,7 @@ const OrderHistory: React.FC = () => {
       id: "4",
       title:"Paracetamol 15mL",
       imageSource:"https://www.farmace.com.br/images/2019/05/18/paracetamol-200mg,mL.png",
-      price:"R$21,00",
+      price:"21,00",
       amount: "3",
       status: "Saiu para entrega",
       payment: "Pago",
@@ -82,7 +82,7 @@ const OrderHistory: React.FC = () => {
               <TotalInfoContainer>
                 <FrameCard>
                   <CardSmall
-                    iconName={false}
+                    showRating={false}
                     price={item.price}
                     title={item.title}
                     onPress={() => handlePress(index)}

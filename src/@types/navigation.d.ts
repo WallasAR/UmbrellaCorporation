@@ -10,10 +10,11 @@ export declare global {
       Comprovant: undefined;
       ProductDetail: undefined;
       PaymentMethod: undefined;
+      Language: undefined;
       // TabRoutes
       Cart: undefined;
       Marketplace: undefined;
-      OrderHystory: undefined;
+      OrderHistory: undefined;
     };
   };
 };

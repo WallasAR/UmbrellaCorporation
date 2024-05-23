@@ -3,22 +3,22 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: ${RFValue(20)}px;
     background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Header = styled.View`
-    width: 100%;
     align-items: center;
     justify-content: center;
     padding: ${RFValue(20)}px;
+    margin-top: ${RFValue(60)}px;
 `;
 
 export const Title = styled.Text`
     text-align: center;
     font-size: ${RFValue(24)}px;
-    margin-top: ${RFValue(40)}px;
+    margin-bottom: ${RFValue(30)}px;
     color: ${({ theme }) => theme.COLORS.BLACK};
     font-family: ${({ theme }) => theme.FONTS.TITLE};
 `;
@@ -45,4 +45,5 @@ export const Footer = styled.View`
     align-items: center;
     justify-content: center;
     margin-top: ${RFValue(50)}px;
+    margin-bottom: ${RFValue(10)}px;
 `;

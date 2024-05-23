@@ -1,25 +1,22 @@
 import React from "react";
 import { View, StatusBar } from "react-native";
-import { ThemeProvider } from "styled-components/native";
-import { NavigationContainer } from "@react-navigation/native";
-import { Splash } from "./src/screens/Auth/Splash/Splash";
+
 import { Routes } from "./src/routes"
+import { AuthProvider } from "./src/contexts/Auth";
 
 import theme from "./src/styles/theme";
+import { ThemeProvider } from "styled-components/native";
 
 const App: React.FC = () => {
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar translucent backgroundColor="transparent" barStyle="dark-content"/>
+      <StatusBar translucent={false} backgroundColor={theme.COLORS.WHITE} barStyle="dark-content"/>
         <View style={{ flex: 1 }}>
-        {isLoading ? <Splash setIsLoading={setIsLoading}/> : 
-          <Routes/>
-        }
+          <AuthProvider>
+            <Routes/>
+          </AuthProvider>
         </View>
-      </NavigationContainer>
       </ThemeProvider>
   );
 };

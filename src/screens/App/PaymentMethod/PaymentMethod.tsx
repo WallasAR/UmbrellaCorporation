@@ -1,14 +1,15 @@
 import React,{ useState } from "react";
+import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import { Button } from "../../../components/Buttons/Button";
 import { GoBackButton } from "../../../components/GoBackButton/GoBackButton";
 import { PaymentOptions } from "../../../components/PaymentOptions/PaymentOptions";
 
-import { Container, Header, Title, SubTitle, Main, Footer, ButtonContent  } from "./styles";
-import { Button } from "../../../components/Buttons/Button";
-import { ScrollView } from "react-native";
+import { Container, Header, Title, SubTitle, Main, Footer, ButtonContent, GoBackContent  } from "./styles";
 
 const PaymentMethod: React.FC = () => {
+
   const [choice, setChoice] = useState("");
   const [receivingMethodChoice, setReceivingMethodChoice] = useState("");
   
@@ -21,7 +22,9 @@ const PaymentMethod: React.FC = () => {
   return (
     <Container>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <GoBackButton/>
+        <GoBackContent>
+          <GoBackButton/>
+        </GoBackContent>
         <Header> 
           <Title>Informações{"\n"}adicionais</Title>
         </Header>
@@ -62,6 +65,7 @@ const PaymentMethod: React.FC = () => {
               icon="map-outline"
               name="No estabelecimento"
               options={[{value: "Local"}]}
+              isEstablishment
             />
             <PaymentOptions
             onPress={() => {}}

@@ -20,7 +20,10 @@ export const Title = styled.Text`
 `;
 
 export const Main = styled.View`
+    flex: 1;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: ${RFValue(200)}px;
 `;
 
 export const Footer = styled.View`
@@ -34,6 +37,19 @@ export const PurchaseResume = styled.View`
     justify-content: space-around;
 
     position: absolute;
-    /* top: ${RFValue(280)}px; */
-    bottom: ${RFValue(220)}px;
+    bottom: ${RFValue(70)}px;
+`;
+
+export const DescriptionContent = styled.View`
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: ${RFValue(400)}px;
+`;
+
+export const Description = styled.Text`
+    text-align: center;
+    font-size: ${RFValue(20)}px;
+    color: ${({ theme }) => theme.COLORS.GRAY6};
+    font-family: ${({ theme }) => theme.FONTS.DMSANSREGULAR};
 `;

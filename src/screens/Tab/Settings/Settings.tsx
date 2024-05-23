@@ -13,10 +13,14 @@ const Settings: React.FC = () => {
         navigation.navigate("Profile")
     };
 
+    const handleToLang = () => {
+        navigation.navigate("Language")
+    };
+
     return(
         <SafeAreaView>
             <Container>
-                    <GoBackButton/>
+                    
                 <Header>
                     <Title>Configurações</Title>
                 </Header>
@@ -37,7 +41,7 @@ const Settings: React.FC = () => {
                     <SettingsButton 
                         icon="language-outline"
                         name="Idioma"
-                        onPress={() => {console.log("botão funcional")}}
+                        onPress={handleToLang}
                     />
 
                     <SettingsButton 

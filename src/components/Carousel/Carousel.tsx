@@ -7,7 +7,7 @@ import { Container, Img, DotContainer } from "./styles"
 
 
 const Carousel: React.FC = () => {
-  const { COLORS } = useTheme()
+  const { COLORS } = useTheme();
 
   // Pegar dimensões do dispositivo
   const screenWidth = Dimensions.get("window").width;
@@ -54,15 +54,15 @@ const Carousel: React.FC = () => {
   const carouselData = [
     {
       id: "1",
-      image: "https://img.freepik.com/premium-vector/landing-page-pharmacy-website-concept-medicine-health-vector-illustration_414360-2592.jpg",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczPbRKW2DIpqFb_Xz1EDfqrED30MwAXqwwh1zRxDHRJx0ozYCDRAsSMmSJkqIIDB5qhViiorO_ibIcaHXWOrBa0W15_Bl5g-cnzmSVXCw7cdGqiy6BevkdBhX0-oC-SAH6JLnhPeAuiNYhRdFNq-kwFT=w1300-h700-s-no-gm?authuser=0",
     },
     {
       id: "2",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6fwBx8c9phI1CAFqvC1k7HQJSIxDB0PLgKQasSRKgw&s",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczOexXMDrmIwIb06AL7uRE45gIUbIwMtZLa15oaex6ar7RQ2Q1rCoRPaA9Ssw3B68N0CeOWuLjZAwSNYpA0wT5-swlrNCAuasxanSb842pKjJjRKHr-JkkTEVlZ20dXGJx9S_AsJSbdcQyiMblvrPyw9=w1300-h700-s-no-gm?authuser=0",
     },
     {
       id: "3",
-      image: "https://cdn3.vectorstock.com/i/1000x1000/36/27/medicine-brand-discount-banner-vector-29233627.jpg",
+      image: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/03/resident-evil-raccoon-city-header.jpg",
     },
   ];
 

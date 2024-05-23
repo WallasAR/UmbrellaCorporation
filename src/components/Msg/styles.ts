@@ -18,7 +18,6 @@ export const AlertContent = styled.View`
   width: ${RFValue(300)}px;
   border-radius: ${RFValue(30)}px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
-  elevation: 15;
 `;
 
 export const HeaderContent = styled.View`
@@ -46,8 +45,8 @@ export const Description = styled.Text`
 `;
 
 export const ViewButton = styled.View`
-  padding: ${RFValue(15)}px;
   flex-direction: row;
+  padding: ${RFValue(15)}px;
   justify-content: space-between;
 `;
 
@@ -61,4 +60,4 @@ export const styles = StyleSheet.create ({
     right: 0 
   }
 
-})
+});

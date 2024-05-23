@@ -8,7 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Search = styled.View`
-  margin-top: ${RFValue(60)}px;
+  margin-top: ${RFValue(10)}px;
   margin-bottom: ${RFValue(20)}px;
 `;
 

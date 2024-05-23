@@ -27,19 +27,10 @@ export const IconArrow = styled(Ionicons)`
     color: ${({ theme }) => theme.COLORS.GRAY4};
 `;
 
-// export const ContainerIcon = styled.View`
-//     elevation: 5;
-//     align-items: center;
-//     justify-content: center;
-//     width: ${RFValue(50)}px;
-//     height: ${RFValue(50)}px;
-//     border-radius: ${RFValue(50)}px;
-//     background-color: ${({ theme }) => theme.COLORS.WHITE};
-// `;
-
 export const IconStyle = styled(Ionicons)`
     font-size: ${RFValue(30)}px;
     color: ${({ theme }) => theme.COLORS.RED5};
+    margin-right: ${RFValue(20)}px;
 `;
 
 export const Info = styled.Text`
@@ -55,5 +46,4 @@ export const ViewRight = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: ${RFValue(20)}px;
 `;

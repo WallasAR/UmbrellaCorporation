@@ -1,17 +1,22 @@
 import React from "react"
 import { Container, SelectedItems, Items, Line, ContainerTotal, Total } from "./styles"; 
 
-const Resume: React.FC = () =>{
+interface ResumeProps {
+    items: number;
+    total: string;
+};
+
+const Resume: React.FC<ResumeProps> = ({ items, total }) =>{
     return(
         <Container>
             <SelectedItems>
-                <Items>(0) Itens{"\n"}selecionados</Items>
+                <Items>({items}) Itens{"\n"}selecionados</Items>
             </SelectedItems>
 
             <Line/>
 
             <ContainerTotal>
-                <Total>Total: R$0</Total>
+                <Total>Total: R${total}</Total>
             </ContainerTotal>
         </Container>
     );

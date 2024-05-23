@@ -43,3 +43,7 @@ export const ButtonContent = styled.View`
   align-items: center;
   justify-content: center;
 `;
+
+export const GoBackContent = styled.View`
+  margin: ${RFValue(40)}px 0 ${RFValue(20)}px ${RFValue(10)}px;
+`;

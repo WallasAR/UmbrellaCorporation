@@ -13,7 +13,7 @@ const StarRating: React.FC = () => {
   // states
   const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating] = useState([1, 2, 3, 4, 5])
-  const theme = useTheme();
+  const { COLORS } = useTheme();
   
   return(
     <Container>
@@ -26,7 +26,7 @@ const StarRating: React.FC = () => {
           >
           <Star 
             name={item <= defaultRating ? "star" : "staro"}
-            color={item <= defaultRating ? theme.COLORS.YELLOW : theme.COLORS.GRAY5 }
+            color={item <= defaultRating ? COLORS.YELLOW : COLORS.GRAY5 }
           />
           </TouchableOpacity>  
         );
@@ -37,15 +37,16 @@ const StarRating: React.FC = () => {
 
 // Componente de classificação de estrelas apenas para visualização
 const StarRatingViewOnly: React.FC<StarProps> = ({ rating }) => {
-  const theme = useTheme();
+  const { COLORS } = useTheme();
+  const starAmount: number[] = [1, 2, 3, 4, 5];
 
   return (
     <ContainerViewOnly>
-      {[1, 2, 3, 4, 5].map((item) => (
+      {starAmount.map((item) => (
         <StarViewOnly
           key={item}
           name={item <= rating ? "star" : "staro"}
-          color={item <= rating ? theme.COLORS.YELLOW : theme.COLORS.GRAY5 }
+          color={item <= rating ? COLORS.YELLOW : COLORS.GRAY5 }
         />
       ))}
     </ContainerViewOnly>

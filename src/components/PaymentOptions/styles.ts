@@ -76,7 +76,6 @@ export const Address = styled.Text`
 `;
 
 export const ViewLeft = styled.View`
-    elevation: 5;
     align-items: center;
     flex-direction: column;
     justify-content: center;

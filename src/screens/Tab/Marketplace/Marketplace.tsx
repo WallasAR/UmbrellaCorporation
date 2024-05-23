@@ -13,6 +13,9 @@ const Marketplace: React.FC = () => {
     <SafeAreaView>
       <ScrollView>
         <Container>
+          <BannerContainer>
+            <Carousel/>
+          </BannerContainer>
           <Search>
             <Input
                 leftIcon 
@@ -21,38 +24,24 @@ const Marketplace: React.FC = () => {
                 placeholder="Pesquisar medicamentos"          
             />
           </Search>
-          <BannerContainer>
-            <Carousel/>
-          </BannerContainer>
           <Main>
             <SubTitle>Orais Líquidos</SubTitle>
             <CardFrame/>
 
-            {/* <SubTitle>Mais Procurados</SubTitle>
+            <SubTitle>Mais Procurados</SubTitle>
             <CardFrameSmall
-              onPress={handleGoToProduct}
               horizontal={true}
             />
 
             <SubTitle>Bem avaliados</SubTitle>
             <CardFrame
-              onPress={handleGoToProduct}
             />
 
             <SubTitle>Disponíveis</SubTitle>
             <CardFrameSmall
-              onPress={handleGoToProduct}
-              horizontal={true}
+              horizontal
+              isDoubleCardShow
             />
-
-            <CardFrameSmall
-              onPress={handleGoToProduct}
-              horizontal={true}
-            />
-
-            <CardFrame
-              onPress={handleGoToProduct}
-            /> */}
           </Main>
         </Container>
       </ScrollView>

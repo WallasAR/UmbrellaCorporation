@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     const { COLORS } = useTheme();
     const buttonVariant = variants[variant];
-    const buttonStyle = disabled ? buttonVariant.disabled : buttonVariant.enabled;
+    const buttonStyle: any = disabled ? buttonVariant.disabled : buttonVariant.enabled;
     
     return(
       <Container

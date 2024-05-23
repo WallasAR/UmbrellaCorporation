@@ -11,7 +11,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  margin: auto 0;
+  margin: ${RFValue(80)}px 0;
   align-items: center;
   justify-content: center;
 `;
@@ -50,5 +50,7 @@ export const ConfirmedAnimation = styled(LottieView)`
 `;
 
 export const NavLinkContainer = styled.View`
-  margin-top: ${RFValue(40)}px;
+  margin-top: ${RFValue(20)}px;
+  position: absolute;
+  top: 0px;
 `;

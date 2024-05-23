@@ -1,8 +1,8 @@
 import React from "react"
-import { ScrollView } from "react-native";
+
+import { StarRatingViewOnly } from "../StarRating/StarRating";
 
 import { Container, Header, ImgContainer, Img, Username, InfoContainer, Description, StarRatingContainer } from "./styles";
-import { StarRatingViewOnly } from "../StarRating/StarRating";
 
 interface UserReviewProps{
   url: string;
@@ -12,6 +12,7 @@ interface UserReviewProps{
 }
 
 const UserReviewLayout: React.FC<UserReviewProps> = ({ url, username, description, starAmount }) => {
+
   return (
     <Container>
       <Header>

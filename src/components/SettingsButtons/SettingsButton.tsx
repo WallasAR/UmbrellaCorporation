@@ -13,7 +13,9 @@ const SettingsButton: React.FC<Props> = ({ icon, name, info, onPress }) => {
     return(
         <Container activeOpacity={0.8} accessibilityRole="button" onPress={onPress}>
             <OptionsContainer>
-                <IconStyle name={icon}/>
+                {icon !== undefined && (
+                    <IconStyle name={icon}/>
+                )}
                 <ViewRight>
                     <ConfigName>{name}</ConfigName>
                     <Info>{info}</Info>

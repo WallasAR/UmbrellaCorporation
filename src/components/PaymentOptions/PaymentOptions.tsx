@@ -1,10 +1,12 @@
 import React from "react";
 import { useTheme } from "styled-components";
+import MapView from "react-native-maps";
 
 import { Button } from "../Buttons/Button";
 import { TouchableOpacity } from "react-native";
 
 import { Container, OptionsContainer, ConfigName, Icon, ViewRight, Info, RatioContent, RatioIcon, AddressContent, Address, Description, ViewRightDelivery, ViewLeft, Identifier, AddressInfoContent } from "./styles.ts";
+import { ShadowedView } from "react-native-fast-shadow";
 
 interface Props {
   name: string;
@@ -15,9 +17,10 @@ interface Props {
   options?: string | any;
   onChange?: string | any;
   checkedValue?: string | any;
+  isEstablishment?: boolean;
 }
 
-const PaymentOptions: React.FC<Props> = ({ icon, name, info, onPress, options, onChange, checkedValue, isDelivery }) => {
+const PaymentOptions: React.FC<Props> = ({ icon, name, info, onPress, options, onChange, checkedValue, isDelivery, isEstablishment }) => {
   const { COLORS } = useTheme();
 
   return (
@@ -53,10 +56,20 @@ const PaymentOptions: React.FC<Props> = ({ icon, name, info, onPress, options, o
                   {/* Quebra-galho para fluxo do app, provavelmente será uma flatList que recebe os endereços do db! */}
                   <TouchableOpacity onPress={() => {}} activeOpacity={0.8}>
                   <AddressContent>
+                    <ShadowedView
+                      style={{ 
+                        shadowOpacity: 0.2,
+                        shadowRadius: 10,
+                        shadowOffset: {
+                          width: -4,
+                          height: 4,
+                        },
+                      }}>
                     <ViewLeft style={{ backgroundColor: active ? COLORS.GREEN2 : COLORS.WHITE }}>
                       <Icon name="home" style={{ color: active ? COLORS.WHITE : COLORS.BLACK }}/>
                       <Identifier style={{ color: active ? COLORS.WHITE : COLORS.BLACK }}>House</Identifier>
                     </ViewLeft>
+                    </ShadowedView>
                   <ViewRightDelivery>
                     <Address>Rua: ABC</Address>
                     <Address>Bairro: Terranova</Address>
@@ -71,6 +84,20 @@ const PaymentOptions: React.FC<Props> = ({ icon, name, info, onPress, options, o
                   style={{ width: "100%" }}
                 />
               </AddressInfoContent>  
+            )}
+            {active && isEstablishment && (
+              <>
+              <Description>Endereço</Description>
+              <MapView
+              initialRegion={{
+                latitude: -5.088313070547483,
+                longitude: -42.76447123391359,
+                latitudeDelta: 0.002,
+                longitudeDelta: 0.001,
+              }}
+              style={{ width: "100%", height: 250, marginTop: 10 }}
+              />
+              </>
             )}
           </RatioContent>
         );
